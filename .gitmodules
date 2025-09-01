@@ -1,0 +1,15 @@
+[submodule "cad"]
+	path = cad
+	url = https://models.physiomeproject.org/workspace/cad
+[submodule "sedCellMLpy"]
+	path = sedCellMLpy
+	url = https://github.com/WeiweiAi/sedCellMLPy
+[submodule "EA"]
+	path = EA
+	url = https://github.com/WeiweiAi/Energy-based-System-Analysis.git
+[submodule "dataPlot"]
+	path = dataPlot
+	url = https://github.com/WeiweiAi/dataPlot.git
+[submodule "sedmlEditor"]
+	path = sedmlEditor
+	url = https://github.com/WeiweiAi/sedmlEditor.git
