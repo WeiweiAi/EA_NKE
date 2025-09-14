@@ -11,8 +11,8 @@ C_m=153400
 new_csv_file = path_+'Terkildsen_NaK_kinetic_Nai.csv'
 ss_csv_file_Nai=path_+'Terkildsen_NaK_kinetic_Fig3a_Data.csv'
 
-csv_files=[(ss_csv_file_Nai, 0, 0),(ss_csv_file_Nai, 11, 11), (ss_csv_file_Nai, 21, 21),(ss_csv_file_Nai, 51, 51), 
-           (ss_csv_file_Nai, 101, 101), (ss_csv_file_Nai, 201, 201), (ss_csv_file_Nai, 401, 401),
+csv_files=[(ss_csv_file_Nai, 0, 0),(ss_csv_file_Nai, 51, 51), (ss_csv_file_Nai, 81, 81),(ss_csv_file_Nai, 101, 101), 
+           (ss_csv_file_Nai, 151, 151), (ss_csv_file_Nai, 251, 251), (ss_csv_file_Nai, 401, 401),
            (ss_csv_file_Nai, 601, 601), (ss_csv_file_Nai, 801, 801)]
 combine_csv_files(new_csv_file, csv_files)
 
@@ -22,13 +22,13 @@ df_ss_old = pd.read_csv(new_csv_file)
 N_cond=len(df_ss_old['environment | t (second)'])
 
 u_e=0
-small_value=1e-6
+small_value=1e-3
 df_ss_new['u_0_Vm'] = [u_e for i in range(N_cond)]
 df_ss_new['c_Nai'] = df_ss_old['environment | Nai (mM)']
-df_ss_new['c_Nao']=[small_value for i in range(N_cond)]
+df_ss_new['c_Nao']=[5 for i in range(N_cond)]
 df_ss_new['c_Ki']=[80 for i in range(N_cond)]
 df_ss_new['c_Ko']=[15 for i in range(N_cond)]
-df_ss_new['c_Pi']=[1 for i in range(N_cond)]
+df_ss_new['c_Pi']=[0.8 for i in range(N_cond)]
 df_ss_new['c_ATP']=[2 for i in range(N_cond)]
 df_ss_new['c_ADP']=[small_value for i in range(N_cond)]
 df_ss_new['T']=[308 for i in range(N_cond)]
@@ -44,13 +44,13 @@ csv_files=[(ss_csv_file_Nai, 0, 0),(ss_csv_file_Nai, 2, 2), (ss_csv_file_Nai, 21
            (ss_csv_file_Nai, 201, 201)]
 combine_csv_files(new_csv_file, csv_files)
 
+small_value=1e-3
 ss_csv_file_new=path_+'Terkildsen_NaK_kinetic_Ke_cond.csv'
 df_ss_new = pd.DataFrame()
 df_ss_old = pd.read_csv(new_csv_file)
 N_cond=len(df_ss_old['environment | t (second)'])
 
 u_e=0
-small_value=1e-6
 df_ss_new['u_0_Vm'] = [u_e for i in range(N_cond)]
 df_ss_new['c_Nai'] =[50 for i in range(N_cond)]
 df_ss_new['c_Nao']=[150 for i in range(N_cond)]
@@ -77,7 +77,6 @@ df_ss_old = pd.read_csv(new_csv_file)
 N_cond=len(df_ss_old['environment | t (second)'])
 
 u_e=0
-small_value=1e-6
 df_ss_new['u_0_Vm'] = [u_e for i in range(N_cond)]
 df_ss_new['c_Nai'] =[40 for i in range(N_cond)]
 df_ss_new['c_Nao']=[small_value for i in range(N_cond)]
@@ -103,8 +102,6 @@ df_ss_new = pd.DataFrame()
 df_ss_old = pd.read_csv(new_csv_file)
 N_cond=len(df_ss_old['environment | t (second)'])
 
-u_e=0
-small_value=1e-6
 df_ss_new['u_0_Vm'] = df_ss_old['environment | V_mem (volt)']
 df_ss_new['c_Nai'] =[50 for i in range(N_cond)]
 df_ss_new['c_Nao']=[150 for i in range(N_cond)]
