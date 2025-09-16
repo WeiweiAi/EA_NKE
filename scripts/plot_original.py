@@ -46,43 +46,50 @@ def merge_csv_files_ss(new_csv_file):
     combine_csv_files(new_csv_file_fullpath, csv_files)
     return new_csv_file_fullpath
 
-def new_lines_ss(dict_data,label=''):
+def new_lines_ss(dict_data,color='b',label=''):
     line_cfg = {}
     for key, file in dict_data.items():
         bg_fig_file=merge_csv_files_ss(file)
-        line_cfg[key] = { 'xdata': (bg_fig_file,key), 'ydata':(bg_fig_file,'v_r1'),
-                'color': 'b', 'linestyle': '-',  'label': label}
+        line_cfg[key+'_'+label] = { 'xdata': (bg_fig_file,key), 'ydata':(bg_fig_file,'v_r1'),
+                'color': color, 'linestyle': '-.',  'label': label}
     return line_cfg
 
 
-def plot_cfg_ss():
+def plot_cfg_ss(lines_dict):
     plot_cfg = {}
-    plot_cfg[1] = {'ylabel': 'cycle rate', 'xlabel': 'potential (mV)','show_grid': 'both', 'grid_axis': 'both',  'title_y': -0.3,
-                'line': ['volt','u_Vm'], 'legend': ['volt','u_Vm']}
-    plot_cfg[2] = {'ylabel': 'cycle rate', 'xlabel': 'Na_i (mM)','show_grid': 'both', 'grid_axis': 'both',   'title_y': -0.3,
-                'line': ['Nai', 'c_Nai'], 'legend': ['Nai', 'c_Nai']}
-    plot_cfg[3] = {'ylabel': 'cycle rate', 'xlabel': 'K_e (mM)','show_grid': 'both', 'grid_axis': 'both',  'title_y': -0.3,
-                'line': ['Ke', 'c_Ko'], 'legend': ['Ke', 'c_Ko']}
-    plot_cfg[4] = {'ylabel': 'cycle rate', 'xlabel': 'ATP (mM)','show_grid': 'both', 'grid_axis': 'both', 'title_y': -0.3,
-                'line': ['ATP', 'c_ATP'], 'legend': ['ATP', 'c_ATP']}
+    for plot_id, line_group in lines_dict.items():
+        plot_cfg[plot_id] = {'ylabel': 'cycle rate', 'xlabel': line_group['xlabel'],'show_grid': 'both', 'grid_axis': 'both',  'title_y': -0.3,
+                'line': line_group['line'], 'legend': line_group['line']}
 
     return plot_cfg
 
 
 if __name__ == '__main__':
     
-    save_fig = {'save_fig': True, 'fig_format': 'tif', 'file_path': simulation_path.as_posix(), 'filename': 'NKE_BG_6_state_ATPNaZK'}
+    save_fig = {'save_fig': True, 'fig_format': 'tif', 'file_path': simulation_path.as_posix()+'/', 'filename': 'NKE_BG_6_state_ATPNaZK'}
     fig_cfg = {'num_rows': 2, 'num_cols': 2, 'width':7.5, 'height':6, 'fig_title': None, 'title_y': 1, 'fontsize': 8, 
            'left': 0.1, 'bottom': 0.15, 'right': 0.9, 'top': 0.95, 'wspace': 0.2, 'hspace': 0.4}|save_fig
     
-    data_dict={'u_Vm': 'report_task_NKE_BG_6_state_ATPNaZK_fit_fixedV_fig5',
+    data_dict_15state={'u_Vm': 'report_task_NKE_BG_15_state_fixedV_fig5',
+               'c_Nai': 'report_task_NKE_BG_15_state_fixedV_fig3a',
+               'c_Ko': 'report_task_NKE_BG_15_state_fixedV_fig3b',
+               'c_ATP': 'report_task_NKE_BG_15_state_fixedV_fig3c'}
+    
+    data_dict_6state={'u_Vm': 'report_task_NKE_BG_6_state_ATPNaZK_fit_fixedV_fig5',
                'c_Nai': 'report_task_NKE_BG_6_state_ATPNaZK_fit_fixedV_fig3a',
                'c_Ko': 'report_task_NKE_BG_6_state_ATPNaZK_fit_fixedV_fig3b',
                'c_ATP': 'report_task_NKE_BG_6_state_ATPNaZK_fit_fixedV_fig3c'}
     
-    line_cfg=new_lines_ss(data_dict,'6-state BG model')
+    lines_dict={1:{'xlabel': 'potential (mV)', 'line':['volt', 'u_Vm_15-state', 'u_Vm_6-state']},
+                2:{'xlabel': 'Na_i (mM)', 'line':['Nai', 'c_Nai_15-state', 'c_Nai_6-state']},
+                3:{'xlabel': 'K_e (mM)', 'line':['Ke', 'c_Ko_15-state', 'c_Ko_6-state']},
+                4:{'xlabel': 'ATP (mM)', 'line':['ATP', 'c_ATP_15-state', 'c_ATP_6-state']}}
+
+    line_cfg_15state=new_lines_ss(data_dict_15state,'b','15-state')
+    line_cfg_6state=new_lines_ss(data_dict_6state,'r','6-state')
     original_line_cfg=original_lines_ss()
-    original_line_cfg.update(line_cfg)
-    plot_cfg = plot_cfg_ss()
+    original_line_cfg.update(line_cfg_15state)
+    original_line_cfg.update(line_cfg_6state)
+    plot_cfg = plot_cfg_ss(lines_dict)
 
     plot_line2D(fig_cfg, plot_cfg, original_line_cfg)
