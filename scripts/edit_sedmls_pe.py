@@ -66,11 +66,11 @@ def edit_NKE_BG_6_state_ATPNaZK_fit_ss():
     exps=[['c_Nai',None,None,None,'NKE_BG_Env','c_Nai'],
           ['c_Nao',None,None,None,'NKE_BG_Env','c_Nao'],
           ['c_Ki',None,None,None,'NKE_BG_Env','c_Ki'],
-          ['c_Ke',None,None,None,'NKE_BG_Env','c_Ke'],
+          ['c_Ko',None,None,None,'NKE_BG_Env','c_Ko'],
           ['c_ATP',None,None,None,'NKE_BG_Env','c_ATP'],
           ['c_ADP',None,None,None,'NKE_BG_Env','c_ADP'],
           ['c_Pi',None,None,None,'NKE_BG_Env','c_Pi'],
-          ['c_H',None,None,None,'NKE_BG_Env','c_H'],
+          ['pH',None,None,None,'NKE_BG_Env','pH'],
           ['u_0_Vm',None,None,None,'NKE_BG_Env','u_0_Vm'],
           ['T',None,None,None,'NKE_BG_Env','T']
           ]     
