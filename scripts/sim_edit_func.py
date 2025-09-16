@@ -233,11 +233,11 @@ def map_datafile(fid,datafile, observables=[],experimentalConditions=[], time=No
     observables_map=[]
     experimentalConditions_map=[]
     for observable in observables:
-        datasourceID=fid+'_'+observable[0]
+        datasourceID=observable[0]
         experimentData_files[fid]['observables'][datasourceID] = {'column_name': observable[0], 'startIndex': observable[1], 'endIndex': observable[2], 'component': observable[3], 'name': observable[4], 'weight': observable[5]}
         observables_map.append((fid,datasourceID,''))
     for exp in experimentalConditions:
-        datasourceID=fid+'_'+exp[0]
+        datasourceID=exp[0]
         experimentData_files[fid]['experimentalConditions'][datasourceID] = {'column_name': exp[0], 'startIndex': exp[1], 'endIndex': exp[2], 'index_value': exp[3], 'component': exp[4], 'name': exp[5]}
         experimentalConditions_map.append((fid,datasourceID))
     return experimentData_files,time_map,observables_map,experimentalConditions_map
