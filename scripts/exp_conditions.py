@@ -1,4 +1,3 @@
-import csv
 import sys
 import os
 import json
@@ -34,7 +33,6 @@ def vary_pH():
     # construct the changes dictionary for different pH values    
     changes=[]
     for i in range(len(pH)):
-        c_H=10**(-pH[i])*1000 #mM
         changes_dict={'c_Nai':{'component':component_name,'name':'c_Nai','newValue':str(c_Nai)},
                       'c_Nao':{'component':component_name,'name':'c_Nao','newValue':str(c_Nao)},
                       'c_Ki':{'component':component_name,'name':'c_Ki','newValue':str(c_Ki)},
@@ -42,7 +40,7 @@ def vary_pH():
                       'c_ATP':{'component':component_name,'name':'c_ATP','newValue':str(c_ATP)},
                       'c_ADP':{'component':component_name,'name':'c_ADP','newValue':str(c_ADP)},
                       'c_Pi':{'component':component_name,'name':'c_Pi','newValue':str(c_Pi)},
-                      'c_H':{'component':component_name,'name':'c_H','newValue':str(c_H)}
+                      'pH':{'component':component_name,'name':'pH','newValue':str(pH[i])}
                       }
         changes.append(changes_dict)
     filename= component_name +'_pH.json' 
@@ -61,7 +59,6 @@ def vary_Nai():
     c_ATP=1 #mM ~1 mM https://doi.org/10.1073/pnas.2318535121, previously estimated 8 to 10 mM level, 
     c_ADP=0.035 #mM 20–40 μM https://doi.org/10.1016/S0005-2728(01)00247-X, default 0.035
     pH=7.2# default 7.2, range 7.15-7.25
-    c_H=10**(-pH)*1000 #mM
     c_Pi=0.8 #mM 1-10  https://pmc.ncbi.nlm.nih.gov/articles/PMC4552539/, default 0.8
 
     # construct the changes dictionary
@@ -74,7 +71,7 @@ def vary_Nai():
                       'c_ATP':{'component':component_name,'name':'c_ATP','newValue':str(c_ATP)},
                       'c_ADP':{'component':component_name,'name':'c_ADP','newValue':str(c_ADP)},
                       'c_Pi':{'component':component_name,'name':'c_Pi','newValue':str(c_Pi)},
-                      'c_H':{'component':component_name,'name':'c_H','newValue':str(c_H)}
+                      'pH':{'component':component_name,'name':'pH','newValue':str(pH)}
                       }
         changes.append(changes_dict)
 
@@ -90,7 +87,6 @@ def vary_Ko():
     c_ATP=1 #mM ~1 mM https://doi.org/10.1073/pnas.2318535121, previously estimated 8 to 10 mM level, 
     c_ADP=0.035 #mM 20–40 μM https://doi.org/10.1016/S0005-2728(01)00247-X, default 0.035
     pH=7.2# default 7.2, range 7.15-7.25
-    c_H=10**(-pH)*1000 #mM
     c_Pi=0.8 #mM 1-10  https://pmc.ncbi.nlm.nih.gov/articles/PMC4552539/, default 0.8
 
     # construct the changes dictionary
@@ -103,7 +99,7 @@ def vary_Ko():
                       'c_ATP':{'component':component_name,'name':'c_ATP','newValue':str(c_ATP)},
                       'c_ADP':{'component':component_name,'name':'c_ADP','newValue':str(c_ADP)},
                       'c_Pi':{'component':component_name,'name':'c_Pi','newValue':str(c_Pi)},
-                      'c_H':{'component':component_name,'name':'c_H','newValue':str(c_H)}
+                      'pH':{'component':component_name,'name':'pH','newValue':str(pH)}
                       }
         changes.append(changes_dict)
 
@@ -118,7 +114,6 @@ def vary_ATP():
     c_ATP=[0.5, 1, 4, 7, 10] #mM ~1 mM https://doi.org/10.1073/pnas.2318535121, previously estimated 8 to 10 mM level, 
     c_ADP=0.035 #mM 20–40 μM https://doi.org/10.1016/S0005-2728(01)00247-X, default 0.035
     pH=7.2# default 7.2, range 7.15-7.25
-    c_H=10**(-pH)*1000 #mM
     c_Pi=0.8 #mM 1-10  https://pmc.ncbi.nlm.nih.gov/articles/PMC4552539/, default 0.8
 
     # construct the changes dictionary
@@ -131,7 +126,7 @@ def vary_ATP():
                       'c_ATP':{'component':component_name,'name':'c_ATP','newValue':str(c_ATP[i])},
                       'c_ADP':{'component':component_name,'name':'c_ADP','newValue':str(c_ADP)},
                       'c_Pi':{'component':component_name,'name':'c_Pi','newValue':str(c_Pi)},
-                      'c_H':{'component':component_name,'name':'c_H','newValue':str(c_H)}
+                      'pH':{'component':component_name,'name':'pH','newValue':str(pH)}
                       }
         changes.append(changes_dict)
 
@@ -146,7 +141,6 @@ def vary_ADP():
     c_ATP=1 #mM ~1 mM https://doi.org/10.1073/pnas.2318535121, previously estimated 8 to 10 mM level,
     c_ADP=[0.01, 0.02, 0.035, 0.05, 0.07] #mM 20–40 μM https://doi.org/10.1016/S0005-2728(01)00247-X, default 0.035
     pH=7.2# default 7.2, range 7.15-7.25
-    c_H=10**(-pH)*1000 #mM
     c_Pi=0.8 #mM 1-10  https://pmc.ncbi.nlm.nih.gov/articles/PMC4552539/, default 0.8
     # construct the changes dictionary
     changes=[]
@@ -158,7 +152,7 @@ def vary_ADP():
                       'c_ATP':{'component':component_name,'name':'c_ATP','newValue':str(c_ATP)},
                       'c_ADP':{'component':component_name,'name':'c_ADP','newValue':str(c_ADP[i])},
                       'c_Pi':{'component':component_name,'name':'c_Pi','newValue':str(c_Pi)},
-                      'c_H':{'component':component_name,'name':'c_H','newValue':str(c_H)}
+                      'pH':{'component':component_name,'name':'pH','newValue':str(pH)}
                       }
         changes.append(changes_dict)
 
@@ -173,7 +167,6 @@ def vary_Pi():
     c_ATP=1 #mM ~1 mM https://doi.org/10.1073/pnas.2318535121, previously estimated 8 to 10 mM level,
     c_ADP=0.035 #mM 20–40 μM https://doi.org/10.1016/S0005-2728(01)00247-X, default 0.035
     pH=7.2# default 7.2, range 7.15-7.25
-    c_H=10**(-pH)*1000 #mM
     c_Pi=[0.8, 1, 4, 7, 10] #mM 1-10  https://pmc.ncbi.nlm.nih.gov/articles/PMC4552539/, default 0.8
 
     # construct the changes dictionary
@@ -186,7 +179,7 @@ def vary_Pi():
                       'c_ATP':{'component':component_name,'name':'c_ATP','newValue':str(c_ATP)},
                       'c_ADP':{'component':component_name,'name':'c_ADP','newValue':str(c_ADP)},
                       'c_Pi':{'component':component_name,'name':'c_Pi','newValue':str(c_Pi[i])},
-                      'c_H':{'component':component_name,'name':'c_H','newValue':str(c_H)}
+                      'pH':{'component':component_name,'name':'pH','newValue':str(pH)}
                       }
         changes.append(changes_dict)
 
@@ -214,13 +207,13 @@ def default_conditions():
                       'c_ATP':{'component':component_name,'name':'c_ATP','newValue':str(c_ATP)},
                       'c_ADP':{'component':component_name,'name':'c_ADP','newValue':str(c_ADP)},
                       'c_Pi':{'component':component_name,'name':'c_Pi','newValue':str(c_Pi[i])},
-                      'c_H':{'component':component_name,'name':'c_H','newValue':str(c_H)}
+                      'pH':{'component':component_name,'name':'pH','newValue':str(pH)}
                       }
         changes.append(changes_dict)
 
     write_json(json_path, changes)
 
-list_vars=['c_Nai', 'c_Nao', 'c_Ki', 'c_Ko', 'c_ATP', 'c_ADP', 'c_Pi', 'u_0_Vm','T']
+list_vars=['c_Nai', 'c_Nao', 'c_Ki', 'c_Ko', 'c_ATP', 'c_ADP', 'c_Pi', 'u_0_Vm','T','pH']
 def get_conditions_from_csv(csv_file='experimental_conditions.csv',list_vars=[]):
     # Read the csv file
     df = pd.read_csv(csv_file)
@@ -230,14 +223,6 @@ def get_conditions_from_csv(csv_file='experimental_conditions.csv',list_vars=[])
     for index, row in df.iterrows():
         changes_dict = {}
         for col in list_vars:
-            if col =='pH':
-                c_H=10**(-row[col])*1000 #mM
-                changes_dict['c_H'] = {
-                    'component': component_name,
-                    'name': 'c_H',
-                    'newValue': str(c_H)
-                }
-            else:
                 changes_dict[col] = {
                     'component': component_name,
                     'name': col,
@@ -286,7 +271,6 @@ def default_conditions_physiome():
     c_ATP=10 #mM ~1 mM https://doi.org/10.1073/pnas.2318535121, previously estimated 8 to 10 mM level,
     c_ADP=0.001 #mM 20–40 μM https://doi.org/10.1016/S0005-2728(01)00247-X, default 0.035
     pH=7.4# default 7.2, range 7.15-7.25
-    c_H=10**(-pH)*1000 #mM
     c_Pi=[0.001] #mM 1-10  https://pmc.ncbi.nlm.nih.gov/articles/PMC4552539/, default 0.8
 
     # construct the changes dictionary
@@ -299,7 +283,7 @@ def default_conditions_physiome():
                       'c_ATP':{'component':component_name,'name':'c_ATP','newValue':str(c_ATP)},
                       'c_ADP':{'component':component_name,'name':'c_ADP','newValue':str(c_ADP)},
                       'c_Pi':{'component':component_name,'name':'c_Pi','newValue':str(c_Pi[i])},
-                      'c_H':{'component':component_name,'name':'c_H','newValue':str(c_H)}
+                      'pH':{'component':component_name,'name':'pH','newValue':str(pH)}
                       }
         changes.append(changes_dict)
 

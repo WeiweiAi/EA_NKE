@@ -1,9 +1,8 @@
 import sys
 import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from sim_edit_func import sedtask, assemble_output,sedtask_oneStep
 from pathlib import Path
-from exp_conditions import read_json,write_json
+from exp_conditions import read_json
 sys.path.append(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'sedCellMLpy'))
 from sedCellMLpy.sedCollector import read_sedml
 from sedCellMLpy.sedExecutor import exec_sed_doc
@@ -19,7 +18,7 @@ def run_simulation(full_path):
 
 
 if __name__ == "__main__":
-    sedml_jsonfiles=['NKE_BG_15_state_sedmls.json','NKE_BG_6_state_ATPNaZK_fit_fixedV_sedmls.json','NKE_BG_6_state_ATPNaZK_fit_sedmls.json']
+    sedml_jsonfiles=['NKE_BG_15_state_sedmls.json','NKE_BG_15_state_fixedV_sedmls.json','NKE_BG_6_state_ATPNaZK_fit_fixedV_sedmls.json','NKE_BG_6_state_ATPNaZK_fit_sedmls.json']
     
     for sedml_jsonfile in sedml_jsonfiles:
         sedml_jsonfile = sedml_jsonfile

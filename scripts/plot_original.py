@@ -1,9 +1,6 @@
 import sys
 import os
 
-from pyparsing import line
-from sympy import li, plot
-
 # Add parent directory to sys.path for module imports
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 # Add 'dataPlot' subdirectory to sys.path for module imports
@@ -14,7 +11,6 @@ from pathlib import Path
 # Import plot_line2D function from dataPlot.dataPlot module
 from dataPlot.dataPlot import plot_line2D
 from dataPlot.manData import combine_csv_files
-import pandas as pd
 
 simulation_path = Path(__file__).parent.parent / 'cad' / 'models' / 'simulation'
 path_ = Path(__file__).parent.parent / 'cad' /  'data'
