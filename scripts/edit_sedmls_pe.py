@@ -83,10 +83,10 @@ def edit_NKE_BG_6_state_ATPNaZK_fit_ss():
     experimentData_files.update(experimentData_files_3)
     experimentData_files.update(experimentData_files_4)
     fitting_type='steadyState'
-    fitExperiments['fit_1']={'type':fitting_type,'algorithm':dict_algorithm_timecourse,'experimentalConditions':experimentalConditions_map_1,'observables':observables_map_1} 
-    fitExperiments['fit_2']={'type':fitting_type,'algorithm':dict_algorithm_timecourse,'experimentalConditions':experimentalConditions_map_2,'observables':observables_map_2} 
-    fitExperiments['fit_3']={'type':fitting_type,'algorithm':dict_algorithm_timecourse,'experimentalConditions':experimentalConditions_map_3,'observables':observables_map_3} 
-    fitExperiments['fit_4']={'type':fitting_type,'algorithm':dict_algorithm_timecourse,'experimentalConditions':experimentalConditions_map_4,'observables':observables_map_4}
+    fitExperiments['fit_1']={'type':fitting_type,'algorithm':dict_algorithm_oneStep,'experimentalConditions':experimentalConditions_map_1,'observables':observables_map_1} 
+    fitExperiments['fit_2']={'type':fitting_type,'algorithm':dict_algorithm_oneStep,'experimentalConditions':experimentalConditions_map_2,'observables':observables_map_2} 
+    fitExperiments['fit_3']={'type':fitting_type,'algorithm':dict_algorithm_oneStep,'experimentalConditions':experimentalConditions_map_3,'observables':observables_map_3} 
+    fitExperiments['fit_4']={'type':fitting_type,'algorithm':dict_algorithm_oneStep,'experimentalConditions':experimentalConditions_map_4,'observables':observables_map_4}
     
     fit_refs=['fit_1','fit_2','fit_3','fit_4']
     adjustables=[['NKE_BG_param','kappa_r1',1e-3,1e4,300],
