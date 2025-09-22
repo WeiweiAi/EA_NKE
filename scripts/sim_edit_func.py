@@ -12,7 +12,8 @@ Algorithms parameters refer to sedCellMLpy/sedCollector.py
 
 def assemble_output(component_name,reaction_list,storage_list,electrical_storage_list,time):
     outputs={}
-    outputs[time]={'component':component_name,'name':time,'scale':1}
+    if time != None:
+        outputs[time]={'component':component_name,'name':time,'scale':1}
     for reaction in reaction_list:
         outputs['mu_'+reaction+'_0']={'component':component_name,'name':'mu_'+reaction+'_0','scale':1}
         outputs['mu_'+reaction+'_1']={'component':component_name,'name':'mu_'+reaction+'_1','scale':1}

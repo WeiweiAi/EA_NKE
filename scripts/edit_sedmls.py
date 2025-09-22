@@ -254,8 +254,34 @@ def edit_NKE_BG_6_state_ATPNaZK_fit():
     sedml_jsonfile =model_name + '_sedmls.json'
     write_json(simulation_path / sedml_jsonfile, NKE_BG_6_state_ATPNaZK_sedmls)
 
+def edit_NKE_Hill_ss_fixedV():
+    component_name='NKE_BG_Env'
+    reaction_list=[]
+    storage_list=['Nai','Nao','Ki','Ko','H','ATP','ADP','Pi']
+    electrical_storage_list=['Vm']
+    outputs=assemble_output(component_name,reaction_list,storage_list,electrical_storage_list,time=None)
+    outputs['v_NKE']={'component':component_name,'name':'v_NKE','scale':1}
+    model_name='NKE_Hill_ss'
+    component_name='NKE_BG_Env'
+    params_jsonfile=parent_path/'pe_task_NKE_Hill_ss_ss.json'
+    params=read_json(params_jsonfile)['best']
+    # change the values in params to strings
+    for key in params:
+        params[key]['newValue']=str(params[key]['newValue'])
+        params[key]['component']=component_name
+    NKE_Hill_ss_sedmls={}
+    NKE_Hill_ss_sedmls['fig3a']=edit_fig3a(model_name,outputs,params)
+    NKE_Hill_ss_sedmls['fig3b']=edit_fig3b(model_name,outputs,params)
+    NKE_Hill_ss_sedmls['fig3c']=edit_fig3c(model_name,outputs,params)
+    NKE_Hill_ss_sedmls['fig5']=edit_fig5(model_name,outputs,params)
+    sedml_jsonfile =model_name + '_sedmls.json'
+    write_json(simulation_path / sedml_jsonfile, NKE_Hill_ss_sedmls)
+
 if __name__ == "__main__":
+    """
     edit_NKE_BG_6_state_ATPNaZK_fit_fixedV()
     edit_NKE_BG_6_state_ATPNaZK_fit()
     edit_15state()
     edit_15state_fixedV()
+    """
+    edit_NKE_Hill_ss_fixedV()
