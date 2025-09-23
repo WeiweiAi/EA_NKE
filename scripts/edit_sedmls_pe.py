@@ -127,7 +127,7 @@ def edit_NKE_BG_6_state_ATP_Na():
                  ['NKE_BG_param','kappa_r4',1e-2,1e6,172042],
                  ['NKE_BG_param','kappa_r5',1e-3,1e4,597],
                  ['NKE_BG_param','kappa_r6',1e-3,1e4,300],
-                 ['NKE_BG_param','K_1',1e-4,1e3,1]
+                 ['NKE_BG_param','K_1',1e-4,0.08,0.01]
                  ]    
     adjustableParameters=get_adjustableParameters(adjustables)    
     

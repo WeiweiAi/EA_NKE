@@ -12,7 +12,7 @@ simulation_path = Path(__file__).parent.parent / 'cad' / 'models' / 'simulation'
 
 def run_simulation(full_path,rel_out_path='./simulation', external_variables_info={},
                   external_variables_values=[],ss_time={},cost_type=None):
-    doc=read_sedml(full_path)
+    doc=read_sedml(Path(full_path).as_posix())
     working_dir=Path(full_path).resolve().parent.as_posix()
     exec_sed_doc(doc, working_dir, working_dir, rel_out_path='./simulation', external_variables_info={},
                   external_variables_values=[],ss_time={},cost_type=None)
