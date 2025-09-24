@@ -134,8 +134,43 @@ def edit_NKE_BG_6_state_ATP_Na():
     full_path = pe_task(file_path, model_name, model_id_base, changes_list, experimentData_files,adjustableParameters,fitExperiments,dict_algorithm_opt_)
     return full_path
 
+def edit_NKE_BG_6_state_ATPNa():
+    file_path=parent_path
+    model_name='NKE_BG_6_state_ATPNa'
+    model_id_base='pulseV'
+    json_path = simulation_path / 'NKE_BG_Env_default.json'
+    changes_list=read_json(json_path)
+    fitExperiments={}
+    fid='fid_1'
+    datafile='./simulation/report_task_NKE_BG_15_state_default_0.csv'
+    observables=[['i_Vm',None,None,'NKE_BG_6_state_ATPNaZK','i_Vm',1]]
+    experimentConditions=[]
+    time={'column_name':'t','startIndex':0,'endIndex':None,'component':'NKE_BG_Env','name':'t'}  
+    experimentData_files,time_map,observables_map,experimentalConditions_map=map_datafile(fid,datafile, observables,experimentConditions, time)
+    
+    fitting_type='timeCourse' # the type of the fit experiment, which could be 'steadyState', or 'timeCourse'
+    if time_map is not None:
+        fitExperiments['fit_1']={'type':fitting_type,'algorithm':dict_algorithm_timecourse,'experimentalConditions':experimentalConditions_map,'observables':observables_map,'time':time_map}
+    else:
+        fitExperiments['fit_1']={'type':fitting_type,'algorithm':dict_algorithm_timecourse,'experimentalConditions':experimentalConditions_map,'observables':observables_map}
+
+    adjustables=[['NKE_BG_param','kappa_r1',1e-2,1e5,10787],
+                 ['NKE_BG_param','kappa_r2',1e-3,1e3,15],
+                 ['NKE_BG_param','kappa_r3',1e-2,1e3,2.3],
+                 ['NKE_BG_param','kappa_r4',1e-2,1e6,172042],
+                 ['NKE_BG_param','kappa_r5',1e-3,1e4,597],
+                 ['NKE_BG_param','kappa_r6',1e-3,1e4,300],
+                 ['NKE_BG_param','K_1',1e-4,1,0.0124],
+                 ['NKE_BG_param','K_4',1e-2,1e4,100]
+                 ]    
+    adjustableParameters=get_adjustableParameters(adjustables)    
+    
+    full_path = pe_task(file_path, model_name, model_id_base, changes_list, experimentData_files,adjustableParameters,fitExperiments,dict_algorithm_opt_)
+    return full_path
+
 if __name__ == "__main__":
     
-    NKE_BG_6_state_ATPNaZK_pe_pulseV=edit_NKE_BG_6_state_ATPNaZK()
-    NKE_BG_6_state_ATP_Na_pe_pulseV=edit_NKE_BG_6_state_ATP_Na()
+   # NKE_BG_6_state_ATPNaZK_pe_pulseV=edit_NKE_BG_6_state_ATPNaZK()
+   # NKE_BG_6_state_ATP_Na_pe_pulseV=edit_NKE_BG_6_state_ATP_Na()
+    NKE_BG_6_state_ATPNa_pe_pulseV=edit_NKE_BG_6_state_ATPNa()
 
