@@ -121,13 +121,13 @@ def edit_NKE_BG_6_state_ATP_Na():
     else:
         fitExperiments['fit_1']={'type':fitting_type,'algorithm':dict_algorithm_timecourse,'experimentalConditions':experimentalConditions_map,'observables':observables_map}
 
-    adjustables=[['NKE_BG_param','kappa_r1',1e-3,1e3,70],
-                 ['NKE_BG_param','kappa_r2',1e-2,1e5,10787],
-                 ['NKE_BG_param','kappa_r3',1e-3,1e3,15],
-                 ['NKE_BG_param','kappa_r4',1e-2,1e6,172042],
-                 ['NKE_BG_param','kappa_r5',1e-3,1e4,597],
-                 ['NKE_BG_param','kappa_r6',1e-3,1e4,300],
-                 ['NKE_BG_param','K_1',1e-4,0.08,0.01]
+    adjustables=[['NKE_BG_param','kappa_r1',1e-3,1e2,1],
+                 ['NKE_BG_param','kappa_r2',1e3,1e7,1e5],
+                 ['NKE_BG_param','kappa_r3',1e1,1e4,1000],
+                 ['NKE_BG_param','kappa_r4',10,1e6,172042],
+                 ['NKE_BG_param','kappa_r5',10,1e4,597],
+                 ['NKE_BG_param','kappa_r6',10,1e4,300],
+                 ['NKE_BG_param','K_1',1e-4,1,0.08]
                  ]    
     adjustableParameters=get_adjustableParameters(adjustables)    
     
@@ -171,6 +171,6 @@ def edit_NKE_BG_6_state_ATPNa():
 if __name__ == "__main__":
     
    # NKE_BG_6_state_ATPNaZK_pe_pulseV=edit_NKE_BG_6_state_ATPNaZK()
-   # NKE_BG_6_state_ATP_Na_pe_pulseV=edit_NKE_BG_6_state_ATP_Na()
-    NKE_BG_6_state_ATPNa_pe_pulseV=edit_NKE_BG_6_state_ATPNa()
+   NKE_BG_6_state_ATP_Na_pe_pulseV=edit_NKE_BG_6_state_ATP_Na()
+   # NKE_BG_6_state_ATPNa_pe_pulseV=edit_NKE_BG_6_state_ATPNa()
 
