@@ -143,7 +143,7 @@ def edit_NKE_BG_6_state_ATPNa():
     fitExperiments={}
     fid='fid_1'
     datafile='./simulation/report_task_NKE_BG_15_state_default_0.csv'
-    observables=[['i_Vm',None,None,'NKE_BG_6_state_ATPNaZK','i_Vm',1]]
+    observables=[['i_Vm',None,None,'NKE_BG_6_state_ATPNa','i_Vm',1]]
     experimentConditions=[]
     time={'column_name':'t','startIndex':0,'endIndex':None,'component':'NKE_BG_Env','name':'t'}  
     experimentData_files,time_map,observables_map,experimentalConditions_map=map_datafile(fid,datafile, observables,experimentConditions, time)
@@ -171,6 +171,6 @@ def edit_NKE_BG_6_state_ATPNa():
 if __name__ == "__main__":
     
    # NKE_BG_6_state_ATPNaZK_pe_pulseV=edit_NKE_BG_6_state_ATPNaZK()
-   NKE_BG_6_state_ATP_Na_pe_pulseV=edit_NKE_BG_6_state_ATP_Na()
-   # NKE_BG_6_state_ATPNa_pe_pulseV=edit_NKE_BG_6_state_ATPNa()
+   #NKE_BG_6_state_ATP_Na_pe_pulseV=edit_NKE_BG_6_state_ATP_Na()
+   NKE_BG_6_state_ATPNa_pe_pulseV=edit_NKE_BG_6_state_ATPNa()
 
