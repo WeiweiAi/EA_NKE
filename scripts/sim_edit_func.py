@@ -10,6 +10,15 @@ Algorithms parameters refer to sedCellMLpy/sedCollector.py
 
 """
 
+def get_conditions(changes):
+    conditions={}
+    for key, change in changes[0].items():
+        conditions[key]={}
+        conditions[key]['component'] = change['component']
+        conditions[key]['name'] = change['name']
+        conditions[key]['scale'] = 1
+    return conditions
+
 def assemble_output(component_name,reaction_list,storage_list,electrical_storage_list,time):
     outputs={}
     if time != None:
@@ -124,7 +133,7 @@ def sedtask(file_path,model_name, model_id_base,changes_list,outputs,dict_algori
     write_sedml(doc,full_path)
     print(validate_sedml(full_path))
     # doc=read_sedml(full_path) # Must read the sedml file again to avoid the error in the next step
-    return full_path
+    return Path(full_path).name
 
 def sedtask_oneStep(file_path, model_name, model_id_base,changes_dict,outputs,dict_algorithm, stepSize):
     """
@@ -176,7 +185,7 @@ def sedtask_oneStep(file_path, model_name, model_id_base,changes_dict,outputs,di
     write_sedml(doc,full_path)
     print(validate_sedml(full_path))
     #doc=read_sedml(full_path) # Must read the sedml file again to avoid the error in the next step
-    return full_path
+    return Path(full_path).name
 
 def map_datafile(fid,datafile, observables=[],experimentalConditions=[], time=None, data_summary='data_summary', ):
     """"
@@ -296,4 +305,4 @@ def pe_task(file_path, model_name, model_id_base, changes_list, experimentData_f
     write_sedml(doc,full_path)
     print(validate_sedml(full_path))
     # doc=read_sedml(full_path) # Must read the sedml file again to avoid the error in the next step
-    return full_path
+    return Path(full_path).name

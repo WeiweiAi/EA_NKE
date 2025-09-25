@@ -46,11 +46,11 @@ def merge_csv_files_ss(new_csv_file):
     combine_csv_files(new_csv_file_fullpath, csv_files)
     return new_csv_file_fullpath
 
-def new_lines_ss(dict_data,color='b',label=''):
+def new_lines_ss(dict_data,color='b',label='', ss='v_r1'):
     line_cfg = {}
     for key, file in dict_data.items():
         bg_fig_file=merge_csv_files_ss(file)
-        line_cfg[key+'_'+label] = { 'xdata': (bg_fig_file,key), 'ydata':(bg_fig_file,'v_r1'),
+        line_cfg[key+'_'+label] = { 'xdata': (bg_fig_file,key), 'ydata':(bg_fig_file,ss),
                 'color': color, 'linestyle': '-.',  'label': label}
     return line_cfg
 
@@ -80,16 +80,23 @@ if __name__ == '__main__':
                'c_Ko': 'report_task_NKE_BG_6_state_ATPNaZK_fit_fixedV_fig3b',
                'c_ATP': 'report_task_NKE_BG_6_state_ATPNaZK_fit_fixedV_fig3c'}
     
-    lines_dict={1:{'xlabel': 'potential (mV)', 'line':['volt', 'u_Vm_15-state', 'u_Vm_6-state']},
-                2:{'xlabel': 'Na_i (mM)', 'line':['Nai', 'c_Nai_15-state', 'c_Nai_6-state']},
-                3:{'xlabel': 'K_e (mM)', 'line':['Ke', 'c_Ko_15-state', 'c_Ko_6-state']},
-                4:{'xlabel': 'ATP (mM)', 'line':['ATP', 'c_ATP_15-state', 'c_ATP_6-state']}}
+    data_dict_Hill={'u_Vm': 'report_task_NKE_Hill_ss_fig5',
+               'c_Nai': 'report_task_NKE_Hill_ss_fig3a',
+               'c_Ko': 'report_task_NKE_Hill_ss_fig3b',
+               'c_ATP': 'report_task_NKE_Hill_ss_fig3c'}
+    
+    lines_dict={1:{'xlabel': 'potential (mV)', 'line':['volt', 'u_Vm_15-state', 'u_Vm_6-state', 'u_Vm_Hill']},
+                2:{'xlabel': 'Na_i (mM)', 'line':['Nai', 'c_Nai_15-state', 'c_Nai_6-state', 'c_Nai_Hill']},
+                3:{'xlabel': 'K_e (mM)', 'line':['Ke', 'c_Ko_15-state', 'c_Ko_6-state', 'c_Ko_Hill']},
+                4:{'xlabel': 'ATP (mM)', 'line':['ATP', 'c_ATP_15-state', 'c_ATP_6-state', 'c_ATP_Hill']}}
 
     line_cfg_15state=new_lines_ss(data_dict_15state,'b','15-state')
     line_cfg_6state=new_lines_ss(data_dict_6state,'r','6-state')
+    line_cfg_Hill=new_lines_ss(data_dict_Hill,'g','Hill','v_NKE')
     original_line_cfg=original_lines_ss()
     original_line_cfg.update(line_cfg_15state)
     original_line_cfg.update(line_cfg_6state)
+    original_line_cfg.update(line_cfg_Hill)
     plot_cfg = plot_cfg_ss(lines_dict)
 
     plot_line2D(fig_cfg, plot_cfg, original_line_cfg)

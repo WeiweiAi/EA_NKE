@@ -1,7 +1,7 @@
 import sys
 import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from sim_edit_func import sedtask, assemble_output,sedtask_oneStep,dict_algorithm_cvode_timecourse,dict_algorithm_cvode_oneStep
+from sim_edit_func import sedtask, assemble_output,sedtask_oneStep,dict_algorithm_cvode_timecourse,dict_algorithm_cvode_oneStep,get_conditions
 from pathlib import Path
 from exp_conditions import read_json,write_json
 
@@ -11,14 +11,7 @@ simulation_path = Path(__file__).parent.parent / 'cad' / 'models' / 'simulation'
 dict_algorithm_timecourse=dict_algorithm_cvode_timecourse()
 dict_algorithm_oneStep=dict_algorithm_cvode_oneStep()
 
-def get_conditions(changes):
-    conditions={}
-    for key, change in changes[0].items():
-        conditions[key]={}
-        conditions[key]['component'] = change['component']
-        conditions[key]['name'] = change['name']
-        conditions[key]['scale'] = 1
-    return conditions
+
 
 def edit_fig3a(model_name,outputs,params=None,dict_algorithm_oneStep=dict_algorithm_oneStep):
     model_id_base = 'fig3a'
