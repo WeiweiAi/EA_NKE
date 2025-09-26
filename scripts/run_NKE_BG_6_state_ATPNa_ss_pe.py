@@ -8,6 +8,6 @@ parent_path = Path(__file__).parent.parent / 'cad' / 'models'
 simulation_path = Path(__file__).parent.parent / 'cad' / 'models' / 'simulation'
 
 full_path= parent_path / 'NKE_BG_6_state_ATPNa_fixedV_ss_pe.sedml'
-ss_time={'fit_1':1,'fit_2':1,'fit_3':1,'fit_4':1}
+ss_time={'fit_1':0.3,'fit_2':0.3,'fit_3':0.3,'fit_4':0.3}
 run_simulation(full_path,rel_out_path='./simulation', external_variables_info={},
                   external_variables_values=[],ss_time=ss_time)
