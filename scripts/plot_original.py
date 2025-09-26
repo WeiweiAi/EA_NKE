@@ -75,24 +75,24 @@ if __name__ == '__main__':
                'c_Ko': 'report_task_NKE_BG_15_state_fixedV_fig3b',
                'c_ATP': 'report_task_NKE_BG_15_state_fixedV_fig3c'}
     
-    data_dict_6state={'u_Vm': 'report_task_NKE_BG_6_state_ATPNaZK_fit_fixedV_fig5',
-               'c_Nai': 'report_task_NKE_BG_6_state_ATPNaZK_fit_fixedV_fig3a',
-               'c_Ko': 'report_task_NKE_BG_6_state_ATPNaZK_fit_fixedV_fig3b',
-               'c_ATP': 'report_task_NKE_BG_6_state_ATPNaZK_fit_fixedV_fig3c'}
+    data_dict_6state={'u_Vm': 'report_task_NKE_BG_6_state_ATPNa_fixedV_fig5',
+               'c_Nai': 'report_task_NKE_BG_6_state_ATPNa_fixedV_fig3a',
+               'c_Ko': 'report_task_NKE_BG_6_state_ATPNa_fixedV_fig3b',
+               'c_ATP': 'report_task_NKE_BG_6_state_ATPNa_fixedV_fig3c'}
     
-    data_dict_Hill={'u_Vm': 'report_task_NKE_Hill_ss_fig5',
-               'c_Nai': 'report_task_NKE_Hill_ss_fig3a',
-               'c_Ko': 'report_task_NKE_Hill_ss_fig3b',
-               'c_ATP': 'report_task_NKE_Hill_ss_fig3c'}
+    data_dict_6state_zk={'u_Vm': 'report_task_NKE_BG_6_state_ATPNaZK_fixedV_fig5',
+               'c_Nai': 'report_task_NKE_BG_6_state_ATPNaZK_fixedV_fig3a',
+               'c_Ko': 'report_task_NKE_BG_6_state_ATPNaZK_fixedV_fig3b',
+               'c_ATP': 'report_task_NKE_BG_6_state_ATPNaZK_fixedV_fig3c'}
     
-    lines_dict={1:{'xlabel': 'potential (mV)', 'line':['volt', 'u_Vm_15-state', 'u_Vm_6-state', 'u_Vm_Hill']},
-                2:{'xlabel': 'Na_i (mM)', 'line':['Nai', 'c_Nai_15-state', 'c_Nai_6-state', 'c_Nai_Hill']},
-                3:{'xlabel': 'K_e (mM)', 'line':['Ke', 'c_Ko_15-state', 'c_Ko_6-state', 'c_Ko_Hill']},
-                4:{'xlabel': 'ATP (mM)', 'line':['ATP', 'c_ATP_15-state', 'c_ATP_6-state', 'c_ATP_Hill']}}
+    lines_dict={1:{'xlabel': 'potential (mV)', 'line':['volt', 'u_Vm_15-state', 'u_Vm_6-state', 'u_Vm_6-state_zk']},
+                2:{'xlabel': 'Na_i (mM)', 'line':['Nai', 'c_Nai_15-state', 'c_Nai_6-state', 'c_Nai_6-state_zk']},
+                3:{'xlabel': 'K_e (mM)', 'line':['Ke', 'c_Ko_15-state', 'c_Ko_6-state', 'c_Ko_6-state_zk']},
+                4:{'xlabel': 'ATP (mM)', 'line':['ATP', 'c_ATP_15-state', 'c_ATP_6-state', 'c_ATP_6-state_zk']}}
 
     line_cfg_15state=new_lines_ss(data_dict_15state,'b','15-state')
     line_cfg_6state=new_lines_ss(data_dict_6state,'r','6-state')
-    line_cfg_Hill=new_lines_ss(data_dict_Hill,'g','Hill','v_NKE')
+    line_cfg_Hill=new_lines_ss(data_dict_6state_zk,'g','6-state_zk')
     original_line_cfg=original_lines_ss()
     original_line_cfg.update(line_cfg_15state)
     original_line_cfg.update(line_cfg_6state)

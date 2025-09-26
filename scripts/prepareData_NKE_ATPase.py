@@ -11,9 +11,11 @@ C_m=153400
 new_csv_file = path_+'Terkildsen_NaK_kinetic_Nai.csv'
 ss_csv_file_Nai=path_+'Terkildsen_NaK_kinetic_Fig3a_Data.csv'
 
-csv_files=[(ss_csv_file_Nai, 0, 0),(ss_csv_file_Nai, 51, 51), (ss_csv_file_Nai, 81, 81),(ss_csv_file_Nai, 101, 101), 
-           (ss_csv_file_Nai, 151, 151), (ss_csv_file_Nai, 251, 251), (ss_csv_file_Nai, 401, 401),
-           (ss_csv_file_Nai, 601, 601), (ss_csv_file_Nai, 801, 801)]
+csv_files=[(ss_csv_file_Nai, 0, 0),
+           (ss_csv_file_Nai, 51, 51), (ss_csv_file_Nai, 101, 101), (ss_csv_file_Nai, 201, 201),
+           (ss_csv_file_Nai, 251, 251), (ss_csv_file_Nai, 301, 301),(ss_csv_file_Nai, 351, 351),(ss_csv_file_Nai, 401, 401),
+           (ss_csv_file_Nai, 501, 501),  (ss_csv_file_Nai, 601, 601), (ss_csv_file_Nai, 801, 801)]
+
 combine_csv_files(new_csv_file, csv_files)
 
 ss_csv_file_new=path_+'Terkildsen_NaK_kinetic_Nai_cond.csv'
@@ -39,9 +41,10 @@ df_ss_new.to_csv(ss_csv_file_new, index=False)
 new_csv_file = path_+'Terkildsen_NaK_kinetic_Ke.csv'
 ss_csv_file_Nai=path_+'Terkildsen_NaK_kinetic_Fig3b_Data.csv'
 
-csv_files=[(ss_csv_file_Nai, 0, 0),(ss_csv_file_Nai, 2, 2), (ss_csv_file_Nai, 21, 21),(ss_csv_file_Nai, 41, 41), 
-           (ss_csv_file_Nai, 81, 81), (ss_csv_file_Nai, 121, 121), (ss_csv_file_Nai, 161, 161),
-           (ss_csv_file_Nai, 201, 201)]
+csv_files=[(ss_csv_file_Nai, 0, 0),
+           (ss_csv_file_Nai, 3, 3), (ss_csv_file_Nai, 11, 11),(ss_csv_file_Nai, 21, 21),(ss_csv_file_Nai, 31, 31), 
+           (ss_csv_file_Nai, 41, 41), (ss_csv_file_Nai, 51, 51), (ss_csv_file_Nai, 61, 61),
+            (ss_csv_file_Nai, 81, 81), (ss_csv_file_Nai, 101, 101),(ss_csv_file_Nai, 201, 201)]
 combine_csv_files(new_csv_file, csv_files)
 
 small_value=1e-3
@@ -67,8 +70,9 @@ df_ss_new.to_csv(ss_csv_file_new, index=False)
 new_csv_file = path_+'Terkildsen_NaK_kinetic_ATP.csv'
 ss_csv_file_Nai=path_+'Terkildsen_NaK_kinetic_Fig3c_Data.csv'
 
-csv_files=[(ss_csv_file_Nai, 0, 0),(ss_csv_file_Nai, 2, 2), (ss_csv_file_Nai, 6, 6),(ss_csv_file_Nai, 11, 11), 
-           (ss_csv_file_Nai, 21, 21), (ss_csv_file_Nai, 41, 41), (ss_csv_file_Nai, 61, 61)]
+csv_files=[(ss_csv_file_Nai, 0, 0),(ss_csv_file_Nai, 2, 2), (ss_csv_file_Nai, 4, 4), (ss_csv_file_Nai, 6, 6),
+           (ss_csv_file_Nai, 11, 11), (ss_csv_file_Nai, 16, 16), (ss_csv_file_Nai, 21, 21),
+           (ss_csv_file_Nai, 31, 31), (ss_csv_file_Nai, 41, 41), (ss_csv_file_Nai, 51, 51), (ss_csv_file_Nai, 61, 61)]
 combine_csv_files(new_csv_file, csv_files)
 
 ss_csv_file_new=path_+'Terkildsen_NaK_kinetic_ATP_cond.csv'
@@ -93,8 +97,10 @@ df_ss_new.to_csv(ss_csv_file_new, index=False)
 new_csv_file = path_+'Terkildsen_NaK_kinetic_volt.csv'
 ss_csv_file_Nai=path_+'New_Terkildsen_NaK_BG_Fig5_Data.csv'
 
-csv_files=[(ss_csv_file_Nai, 0, 0),(ss_csv_file_Nai, 1, 1),(ss_csv_file_Nai, 201, 201), (ss_csv_file_Nai, 701, 701),(ss_csv_file_Nai, 1201, 1201), 
-           (ss_csv_file_Nai, 1701, 1701), (ss_csv_file_Nai, 1801, 1801)]
+csv_files=[(ss_csv_file_Nai, 0, 0),
+           (ss_csv_file_Nai, 301, 301), (ss_csv_file_Nai, 451, 451),(ss_csv_file_Nai, 601, 601),
+           (ss_csv_file_Nai, 751, 751), (ss_csv_file_Nai, 901, 901), (ss_csv_file_Nai, 1101, 1101),(ss_csv_file_Nai, 1201, 1201)
+           , (ss_csv_file_Nai, 1301, 1301),(ss_csv_file_Nai, 1501, 1501), (ss_csv_file_Nai, 1701, 1701)]
 combine_csv_files(new_csv_file, csv_files)
 
 ss_csv_file_new=path_+'Terkildsen_NaK_kinetic_volt_cond.csv'
