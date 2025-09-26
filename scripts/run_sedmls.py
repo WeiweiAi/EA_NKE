@@ -14,8 +14,8 @@ def run_simulation(full_path,rel_out_path='./simulation', external_variables_inf
                   external_variables_values=[],ss_time={},cost_type=None):
     doc=read_sedml(Path(full_path).as_posix())
     working_dir=Path(full_path).resolve().parent.as_posix()
-    exec_sed_doc(doc, working_dir, working_dir, rel_out_path='./simulation', external_variables_info={},
-                  external_variables_values=[],ss_time={},cost_type=None)
+    exec_sed_doc(doc, working_dir, working_dir, rel_out_path=rel_out_path, external_variables_info=external_variables_info,
+                  external_variables_values=external_variables_values,ss_time=ss_time,cost_type=cost_type)
 
 def run_sim_jsons (sedml_jsonfiles):
     for sedml_jsonfile in sedml_jsonfiles:
