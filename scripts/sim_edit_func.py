@@ -65,7 +65,7 @@ def dict_algorithm_cvode_oneStep():
     dict_algorithmParameter={'kisaoID':'KISAO:0000209', 'name':'rtol','value':'1e-07'} 
     dict_algorithmParameter1={'kisaoID':'KISAO:0000467', 'name':'max_step','value':'0.0001'} 
     dict_algorithmParameter2={'kisaoID':'KISAO:0000415', 'name':'max_step_number','value':'500000'} 
-    dict_algorithmParameter3={'kisaoID':'KISAO:0000211', 'name':'atol','value':'1e-09'}
+    dict_algorithmParameter3={'kisaoID':'KISAO:0000211', 'name':'atol','value':'1e-12'}
     # You can set more algorithm parameters if needed. 
     # Add the algorithm parameters to listOfAlgorithmParameters
     dict_algorithm={'kisaoID':'KISAO:0000019','name':'CVODE','listOfAlgorithmParameters':[dict_algorithmParameter,dict_algorithmParameter1,dict_algorithmParameter2,dict_algorithmParameter3]} 

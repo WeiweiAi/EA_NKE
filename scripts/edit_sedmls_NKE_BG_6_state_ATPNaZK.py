@@ -19,19 +19,22 @@ def edit_NKE_BG_6_state_ATPNaZK():
     electrical_storage_list=['Vm']
     time='t'
     outputs=assemble_output(component_name,reaction_list,storage_list,electrical_storage_list,time)
-    newparam_json=parent_path/'pe_task_NKE_BG_6_state_ATPNaZK_pulseV.json'
-    params=read_json(newparam_json)['best']
-    sedmls={}
-    model_name='NKE_BG_6_state_ATPNaZK'
-    sedmls['default']=edit_default(model_name,outputs,params)
-    sedmls['Nai']=edit_Nai(model_name,outputs,params)
-    sedmls['Ko']=edit_Ko(model_name,outputs,params)
-    sedmls['ATP']=edit_ATP(model_name,outputs,params)
-    sedmls['ADP']=edit_ADP(model_name,outputs,params)
-    sedmls['Pi']=edit_Pi(model_name,outputs,params)
-    sedmls['pH']=edit_pH(model_name,outputs,params)
-    sedml_jsonfile =model_name + '_sedmls.json'
-    write_json(simulation_path / sedml_jsonfile, sedmls)
+    newparams=['pe_task_NKE_BG_6_state_ATPNaZK_pulseV.json','pe_task_NKE_BG_6_state_ATPNaZK_fixedV_ss.json']
+    ids=['_time','_ss']
+    for newparam in newparams:
+        newparam_json=simulation_path/newparam
+        params=read_json(newparam_json)['best']
+        sedmls={}
+        model_name='NKE_BG_6_state_ATPNaZK'
+        sedmls['default']=edit_default(model_name,outputs,'default'+ids[newparams.index(newparam)],params)
+        sedmls['Nai']=edit_Nai(model_name,outputs,'Nai'+ids[newparams.index(newparam)],params)
+        sedmls['Ko']=edit_Ko(model_name,outputs,'Ko'+ids[newparams.index(newparam)],params)
+        sedmls['ATP']=edit_ATP(model_name,outputs,'ATP'+ids[newparams.index(newparam)],params)
+        sedmls['ADP']=edit_ADP(model_name,outputs,'ADP'+ids[newparams.index(newparam)],params)
+        sedmls['Pi']=edit_Pi(model_name,outputs,'Pi'+ids[newparams.index(newparam)],params)
+        sedmls['pH']=edit_pH(model_name,outputs,'pH'+ids[newparams.index(newparam)],params)
+        sedml_jsonfile =model_name + ids[newparams.index(newparam)] + '_sedmls.json'
+        write_json(simulation_path / sedml_jsonfile, sedmls)
 
 def edit_NKE_BG_6_state_ATPNaZK_fixedV():
     component_name='NKE_BG_6_state_ATPNaZK'
@@ -42,16 +45,19 @@ def edit_NKE_BG_6_state_ATPNaZK_fixedV():
     electrical_storage_list=['Vm']
     time='t'
     outputs=assemble_output(component_name,reaction_list,storage_list,electrical_storage_list,time)
-    newparam_json=parent_path/'pe_task_NKE_BG_6_state_ATPNaZK_pulseV.json'
-    params=read_json(newparam_json)['best']
-    sedmls={}
-    model_name='NKE_BG_6_state_ATPNaZK_fixedV'
-    sedmls['fig3a']=edit_fig3a(model_name,outputs,params)
-    sedmls['fig3b']=edit_fig3b(model_name,outputs,params)
-    sedmls['fig3c']=edit_fig3c(model_name,outputs,params)
-    sedmls['fig5']=edit_fig5(model_name,outputs,params)
-    sedml_jsonfile =model_name + '_sedmls.json'
-    write_json(simulation_path / sedml_jsonfile, sedmls)
+    newparams=['pe_task_NKE_BG_6_state_ATPNaZK_pulseV.json','pe_task_NKE_BG_6_state_ATPNaZK_fixedV_ss.json']
+    ids=['_time','_ss']
+    for newparam in newparams:
+        newparam_json=simulation_path/newparam
+        params=read_json(newparam_json)['best']
+        sedmls={}
+        model_name='NKE_BG_6_state_ATPNaZK_fixedV'
+        sedmls['fig3a']=edit_fig3a(model_name,outputs,'fig3a'+ids[newparams.index(newparam)],params)
+        sedmls['fig3b']=edit_fig3b(model_name,outputs,'fig3b'+ids[newparams.index(newparam)],params)
+        sedmls['fig3c']=edit_fig3c(model_name,outputs,'fig3c'+ids[newparams.index(newparam)],params)
+        sedmls['fig5']=edit_fig5(model_name,outputs,'fig5'+ids[newparams.index(newparam)],params)
+        sedml_jsonfile =model_name + ids[newparams.index(newparam)] + '_sedmls.json'
+        write_json(simulation_path / sedml_jsonfile, sedmls)    
 
 if __name__ == "__main__":
 

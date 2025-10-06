@@ -13,8 +13,8 @@ dict_algorithm_oneStep=dict_algorithm_cvode_oneStep()
 
 
 
-def edit_fig3a(model_name,outputs,params=None,dict_algorithm_oneStep=dict_algorithm_oneStep):
-    model_id_base = 'fig3a'
+def edit_fig3a(model_name,outputs,model_id_base = 'fig3a',params=None,dict_algorithm_oneStep=dict_algorithm_oneStep):
+    
     json_path = simulation_path / f'Terkildsen_NaK_kinetic_Nai_cond.json'
     changes=read_json(json_path)
     conditions=get_conditions(changes)
@@ -26,8 +26,8 @@ def edit_fig3a(model_name,outputs,params=None,dict_algorithm_oneStep=dict_algori
     sedml_file=sedtask_oneStep(parent_path,model_name, model_id_base,changes,outputs,dict_algorithm_oneStep,stepSize)
     return sedml_file
 
-def edit_fig3b(model_name,outputs,params=None,dict_algorithm_oneStep=dict_algorithm_oneStep):
-    model_id_base = 'fig3b'
+def edit_fig3b(model_name,outputs,model_id_base = 'fig3b',params=None,dict_algorithm_oneStep=dict_algorithm_oneStep):
+
     json_path = simulation_path / f'Terkildsen_NaK_kinetic_Ke_cond.json'
     changes=read_json(json_path)
     conditions=get_conditions(changes)
@@ -39,8 +39,7 @@ def edit_fig3b(model_name,outputs,params=None,dict_algorithm_oneStep=dict_algori
     sedml_file=sedtask_oneStep(parent_path,model_name, model_id_base,changes,outputs,dict_algorithm_oneStep,stepSize)
     return sedml_file
 
-def edit_fig3c(model_name,outputs,params=None,dict_algorithm_oneStep=dict_algorithm_oneStep):
-    model_id_base = 'fig3c'
+def edit_fig3c(model_name,outputs,model_id_base = 'fig3c',params=None,dict_algorithm_oneStep=dict_algorithm_oneStep):
     json_path = simulation_path / f'Terkildsen_NaK_kinetic_ATP_cond.json'
     changes=read_json(json_path)
     conditions=get_conditions(changes)
@@ -52,8 +51,7 @@ def edit_fig3c(model_name,outputs,params=None,dict_algorithm_oneStep=dict_algori
     sedml_file=sedtask_oneStep(parent_path,model_name, model_id_base,changes,outputs,dict_algorithm_oneStep,stepSize)
     return sedml_file
 
-def edit_fig5(model_name,outputs,params=None,dict_algorithm_oneStep=dict_algorithm_oneStep):
-    model_id_base = 'fig5'
+def edit_fig5(model_name,outputs,model_id_base = 'fig5',params=None,dict_algorithm_oneStep=dict_algorithm_oneStep):
     json_path = simulation_path / f'Terkildsen_NaK_kinetic_volt_cond.json'
     changes=read_json(json_path)
     conditions=get_conditions(changes)
@@ -65,8 +63,7 @@ def edit_fig5(model_name,outputs,params=None,dict_algorithm_oneStep=dict_algorit
     sedml_file=sedtask_oneStep(parent_path,model_name, model_id_base,changes,outputs,dict_algorithm_oneStep,stepSize)
     return sedml_file
 
-def edit_default(model_name,outputs,params=None,dict_algorithm_timecourse=dict_algorithm_timecourse):
-    model_id_base = 'default'
+def edit_default(model_name,outputs,model_id_base = 'default',params=None,dict_algorithm_timecourse=dict_algorithm_timecourse):
     json_path = simulation_path / f'NKE_BG_Env_default.json'
     changes=read_json(json_path)
     conditions=get_conditions(changes)
@@ -78,8 +75,7 @@ def edit_default(model_name,outputs,params=None,dict_algorithm_timecourse=dict_a
     sedml_file=sedtask(parent_path,model_name, model_id_base,changes,outputs,dict_algorithm_timecourse,startTime, endTime, numSteps)
     return sedml_file
 
-def edit_Nai(model_name,outputs,params=None,dict_algorithm_timecourse=dict_algorithm_timecourse):
-    model_id_base = 'Nai'
+def edit_Nai(model_name,outputs,model_id_base = 'Nai',params=None,dict_algorithm_timecourse=dict_algorithm_timecourse):
     json_path = simulation_path / f'NKE_BG_Env_Nai.json'
     changes=read_json(json_path)
     conditions=get_conditions(changes)
@@ -91,8 +87,7 @@ def edit_Nai(model_name,outputs,params=None,dict_algorithm_timecourse=dict_algor
     sedml_file=sedtask(parent_path,model_name, model_id_base,changes,outputs,dict_algorithm_timecourse,startTime, endTime, numSteps)
     return sedml_file
 
-def edit_Ko(model_name,outputs,params=None,dict_algorithm_timecourse=dict_algorithm_timecourse):
-    model_id_base = 'Ko'
+def edit_Ko(model_name,outputs,model_id_base = 'Ko',params=None,dict_algorithm_timecourse=dict_algorithm_timecourse):
     json_path = simulation_path / f'NKE_BG_Env_Ko.json'
     changes=read_json(json_path)
     conditions=get_conditions(changes)
@@ -104,8 +99,7 @@ def edit_Ko(model_name,outputs,params=None,dict_algorithm_timecourse=dict_algori
     sedml_file=sedtask(parent_path,model_name, model_id_base,changes,outputs,dict_algorithm_timecourse,startTime, endTime, numSteps)
     return sedml_file
 
-def edit_ATP(model_name,outputs,params=None,dict_algorithm_timecourse=dict_algorithm_timecourse):
-    model_id_base = 'ATP'
+def edit_ATP(model_name,outputs,model_id_base = 'ATP',params=None,dict_algorithm_timecourse=dict_algorithm_timecourse):
     json_path = simulation_path / f'NKE_BG_Env_ATP.json'
     changes=read_json(json_path)
     conditions=get_conditions(changes)
@@ -117,8 +111,7 @@ def edit_ATP(model_name,outputs,params=None,dict_algorithm_timecourse=dict_algor
     sedml_file=sedtask(parent_path,model_name, model_id_base,changes,outputs,dict_algorithm_timecourse,startTime, endTime, numSteps)
     return sedml_file
 
-def edit_ADP(model_name,outputs,params=None,dict_algorithm_timecourse=dict_algorithm_timecourse):
-    model_id_base = 'ADP'
+def edit_ADP(model_name,outputs,model_id_base = 'ADP',params=None,dict_algorithm_timecourse=dict_algorithm_timecourse):
     json_path = simulation_path / f'NKE_BG_Env_ADP.json'
     changes=read_json(json_path)
     conditions=get_conditions(changes)
@@ -130,8 +123,7 @@ def edit_ADP(model_name,outputs,params=None,dict_algorithm_timecourse=dict_algor
     sedml_file=sedtask(parent_path,model_name, model_id_base,changes,outputs,dict_algorithm_timecourse,startTime, endTime, numSteps)
     return sedml_file
 
-def edit_Pi(model_name,outputs,params=None,dict_algorithm_timecourse=dict_algorithm_timecourse):
-    model_id_base = 'Pi'
+def edit_Pi(model_name,outputs,model_id_base = 'Pi',params=None,dict_algorithm_timecourse=dict_algorithm_timecourse):
     json_path = simulation_path / f'NKE_BG_Env_Pi.json'
     changes=read_json(json_path)
     conditions=get_conditions(changes)
@@ -143,8 +135,7 @@ def edit_Pi(model_name,outputs,params=None,dict_algorithm_timecourse=dict_algori
     sedml_file=sedtask(parent_path,model_name, model_id_base,changes,outputs,dict_algorithm_timecourse,startTime, endTime, numSteps)
     return sedml_file
 
-def edit_pH(model_name,outputs,params=None,dict_algorithm_timecourse=dict_algorithm_timecourse):
-    model_id_base = 'pH'
+def edit_pH(model_name,outputs,model_id_base = 'pH',params=None,dict_algorithm_timecourse=dict_algorithm_timecourse):
     json_path = simulation_path / f'NKE_BG_Env_pH.json'
     changes=read_json(json_path)
     conditions=get_conditions(changes)
