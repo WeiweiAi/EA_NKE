@@ -1,0 +1,9 @@
+from run_sedmls import run_sim_jsons
+
+sedml_jsonfiles=['NKE_BG_6_state_ATP_Na_ss_sedmls.json','NKE_BG_6_state_ATP_Na_time_sedmls.json',
+                 'NKE_BG_6_state_ATP_Na_fixedV_ss_sedmls.json','NKE_BG_6_state_ATP_Na_fixedV_time_sedmls.json'
+                ]
+
+run_sim_jsons (sedml_jsonfiles)
+
+   
