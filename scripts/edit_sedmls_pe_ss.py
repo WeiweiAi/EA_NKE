@@ -55,14 +55,14 @@ def edit_NKE_BG_6_state_ATPNaZK_ss():
     fitExperiments['fit_4']={'type':fitting_type,'algorithm':dict_algorithm_oneStep,'experimentalConditions':experimentalConditions_map_4,'observables':observables_map_4}
     
     fit_refs=['fit_1','fit_2','fit_3','fit_4']
-    adjustables=[['NKE_BG_param','kappa_r1',1e-4,1e8,10787],
-                 ['NKE_BG_param','kappa_r2',1e-4,1e8,15],
-                 ['NKE_BG_param','kappa_r3',1e-4,1e8,2.3],
-                 ['NKE_BG_param','kappa_r4',1e-4,1e8,172042],
-                 ['NKE_BG_param','kappa_r5',1e-4,1e8,597],
-                 ['NKE_BG_param','kappa_r6',1e-4,1e8,300],
-                 ['NKE_BG_param','K_1',1e-4,1e8,0.0124],
-                 ['NKE_BG_param','K_4',1e-4,1e8,100]
+    adjustables=[['NKE_BG_param','kappa_r1',1e-4,1e6,10787],
+                 ['NKE_BG_param','kappa_r2',1e-3,1e4,15],
+                 ['NKE_BG_param','kappa_r3',1e-4,1e4,2.3],
+                 ['NKE_BG_param','kappa_r4',1e-2,1e7,172042],
+                 ['NKE_BG_param','kappa_r5',1e-3,1e5,597],
+                 ['NKE_BG_param','kappa_r6',1e-3,1e5,300],
+                 ['NKE_BG_param','K_1',1e-5,2,0.0124],
+                 ['NKE_BG_param','K_4',1e-3,1e5,100]
                  ]    
     adjustableParameters=get_adjustableParameters(adjustables)
     full_path = pe_task(file_path, model_name, model_id_base, changes_list, experimentData_files,adjustableParameters,fitExperiments,dict_algorithm_opt_)
@@ -109,13 +109,13 @@ def edit_NKE_BG_6_state_ATP_Na_ss():
     fitExperiments['fit_3']={'type':fitting_type,'algorithm':dict_algorithm_oneStep,'experimentalConditions':experimentalConditions_map_3,'observables':observables_map_3} 
     fitExperiments['fit_4']={'type':fitting_type,'algorithm':dict_algorithm_oneStep,'experimentalConditions':experimentalConditions_map_4,'observables':observables_map_4}  
     fit_refs=['fit_1','fit_2','fit_3','fit_4']
-    adjustables=[['NKE_BG_param','kappa_r1',1e-4,1e8,1],
-                 ['NKE_BG_param','kappa_r2',1e-4,1e8,1e5],
-                 ['NKE_BG_param','kappa_r3',1e-4,1e8,1000],
-                 ['NKE_BG_param','kappa_r4',1e-4,1e8,172042],
-                 ['NKE_BG_param','kappa_r5',1e-4,1e8,597],
-                 ['NKE_BG_param','kappa_r6',1e-4,1e8,300],
-                 ['NKE_BG_param','K_1',1e-4,1e8,0.08]
+    adjustables=[['NKE_BG_param','kappa_r1',1e-4,1e3,1],
+                 ['NKE_BG_param','kappa_r2',1e2,1e8,1e5],
+                 ['NKE_BG_param','kappa_r3',0.1,1e4,1000],
+                 ['NKE_BG_param','kappa_r4',1,1e7,172042],
+                 ['NKE_BG_param','kappa_r5',1,1e5,597],
+                 ['NKE_BG_param','kappa_r6',1,1e5,300],
+                 ['NKE_BG_param','K_1',1e-5,2,0.08]
                  ]    
     adjustableParameters=get_adjustableParameters(adjustables)    
     
@@ -163,14 +163,14 @@ def edit_NKE_BG_6_state_ATPNa_ss():
     fitExperiments['fit_3']={'type':fitting_type,'algorithm':dict_algorithm_oneStep,'experimentalConditions':experimentalConditions_map_3,'observables':observables_map_3} 
     fitExperiments['fit_4']={'type':fitting_type,'algorithm':dict_algorithm_oneStep,'experimentalConditions':experimentalConditions_map_4,'observables':observables_map_4}  
     fit_refs=['fit_1','fit_2','fit_3','fit_4']
-    adjustables=[['NKE_BG_param','kappa_r1',1e-4,1e8,10787],
-                 ['NKE_BG_param','kappa_r2',1e-4,1e8,15],
-                 ['NKE_BG_param','kappa_r3',1e-4,1e8,2.3],
-                 ['NKE_BG_param','kappa_r4',1e-4,1e8,172042],
-                 ['NKE_BG_param','kappa_r5',1e-4,1e8,597],
-                 ['NKE_BG_param','kappa_r6',1e-4,1e8,300],
-                 ['NKE_BG_param','K_1',1e-4,1e8,0.0124],
-                 ['NKE_BG_param','K_4',1e-4,1e8,100]
+    adjustables=[['NKE_BG_param','kappa_r1',1e-4,1e6,10787],
+                 ['NKE_BG_param','kappa_r2',1e-3,1e4,15],
+                 ['NKE_BG_param','kappa_r3',1e-4,1e4,2.3],
+                 ['NKE_BG_param','kappa_r4',1e-2,1e7,172042],
+                 ['NKE_BG_param','kappa_r5',1e-3,1e5,597],
+                 ['NKE_BG_param','kappa_r6',1e-3,1e5,300],
+                 ['NKE_BG_param','K_1',1e-5,2,0.0124],
+                 ['NKE_BG_param','K_4',1e-3,1e5,100]
                  ]    
     adjustableParameters=get_adjustableParameters(adjustables)    
     
