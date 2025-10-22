@@ -76,9 +76,11 @@ def dict_algorithm_opt():
     # This is to set the tolerance for least square when using local optimization algorithm, default is 1e-8
     dict_algorithmParameter_opt={'kisaoID':'KISAO:0000597','name':'tol','value':'1e-6'} 
     # This is to set the maximum number of iterations when using local optimization algorithm, default is 1000
-    dict_algorithmParameter_opt2={'kisaoID':'KISAO:0000486','name':'maxiter','value':'3000'}
+    dict_algorithmParameter_opt2={'kisaoID':'KISAO:0000517','name':'maxiter','value':'2000'}
+    # This is to set the population size when using genetic algorithm, default is 15
+    dict_algorithmParameter_opt3={'kisaoID':'KISAO:0000519','name':'popsize','value':'100'}
     # This is to set optimization algorithm as genetic algorithm, and scipy.differential_evolution is used to implement the algorithm
-    dict_algorithm_opt={'kisaoID':'KISAO:0000520','name':'evolutionary algorithm', 'listOfAlgorithmParameters':[dict_algorithmParameter_opt,dict_algorithmParameter_opt2]}
+    dict_algorithm_opt={'kisaoID':'KISAO:0000520','name':'evolutionary algorithm', 'listOfAlgorithmParameters':[dict_algorithmParameter_opt,dict_algorithmParameter_opt2,dict_algorithmParameter_opt3]}
     return dict_algorithm_opt
 
 def sedtask(file_path,model_name, model_id_base,changes_list,outputs,dict_algorithm,startTime, endTime, numSteps):
