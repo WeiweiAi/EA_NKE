@@ -272,11 +272,11 @@ def edit_NKE_BG_4_state_ATPNaZK_SS_free():
     adjustables=[['NKE_BG_param','kappa_r1',1e-6,1e9,10787],
                  ['NKE_BG_param','kappa_r2',1e-6,1e9,2.3],
                  ['NKE_BG_param','kappa_r3',1e-6,1e9,172042],
-                 ['NKE_BG_param','kappa_r4',1e-15,10,3],
+                 ['NKE_BG_param','kappa_r4',1e-15,1e-5,1e-7],
                  ['NKE_BG_param','K_1',1e-6,1e9,0.0124],
                  ['NKE_BG_param','K_2',1e-6,1e9,2000],
                  ['NKE_BG_param','K_3',1e-6,1e9,100],
-                 ['NKE_BG_param','K_4',1e-15,10,1]
+                 ['NKE_BG_param','K_4',1e-15,1e-5,1e-7]
                  ]    
     adjustableParameters=get_adjustableParameters(adjustables)
     full_path = pe_task(file_path, model_name, model_id_base, changes_list, experimentData_files,adjustableParameters,fitExperiments,dict_algorithm_opt_)
@@ -310,11 +310,11 @@ def edit_NKE_BG_4_state_ATPNaZK_SS_free_fit1():
     adjustables=[['NKE_BG_param','kappa_r1',1e-6,1e9,10787],
                  ['NKE_BG_param','kappa_r2',1e-6,1e9,2.3],
                  ['NKE_BG_param','kappa_r3',1e-6,1e9,172042],
-                 ['NKE_BG_param','kappa_r4',1e-15,10,3],
+                 ['NKE_BG_param','kappa_r4',1e-15,1e-5,1e-7],
                  ['NKE_BG_param','K_1',1e-6,1e9,0.0124],
                  ['NKE_BG_param','K_2',1e-6,1e9,2000],
                  ['NKE_BG_param','K_3',1e-6,1e9,100],
-                 ['NKE_BG_param','K_4',1e-15,10,1]
+                 ['NKE_BG_param','K_4',1e-15,1e-5,1e-7]
                  ]    
     adjustableParameters=get_adjustableParameters(adjustables)
     full_path = pe_task(file_path, model_name, model_id_base, changes_list, experimentData_files,adjustableParameters,fitExperiments,dict_algorithm_opt_)
@@ -349,11 +349,11 @@ def edit_NKE_BG_4_state_ATPNaZK_SS_free_fit2():
     adjustables=[['NKE_BG_param','kappa_r1',1e-6,1e9,10787],
                  ['NKE_BG_param','kappa_r2',1e-6,1e9,2.3],
                  ['NKE_BG_param','kappa_r3',1e-6,1e9,172042],
-                 ['NKE_BG_param','kappa_r4',1e-15,10,3],
+                 ['NKE_BG_param','kappa_r4',1e-15,1e-5,1e-7],
                  ['NKE_BG_param','K_1',1e-6,1e9,0.0124],
                  ['NKE_BG_param','K_2',1e-6,1e9,2000],
                  ['NKE_BG_param','K_3',1e-6,1e9,100],
-                 ['NKE_BG_param','K_4',1e-15,10,1]
+                 ['NKE_BG_param','K_4',1e-15,1e-5,1e-7]
                  ]    
     adjustableParameters=get_adjustableParameters(adjustables)
     full_path = pe_task(file_path, model_name, model_id_base, changes_list, experimentData_files,adjustableParameters,fitExperiments,dict_algorithm_opt_)
@@ -389,11 +389,11 @@ def edit_NKE_BG_4_state_ATPNaZK_SS_free_fit3():
     adjustables=[['NKE_BG_param','kappa_r1',1e-6,1e9,10787],
                  ['NKE_BG_param','kappa_r2',1e-6,1e9,2.3],
                  ['NKE_BG_param','kappa_r3',1e-6,1e9,172042],
-                 ['NKE_BG_param','kappa_r4',1e-15,10,3],
+                 ['NKE_BG_param','kappa_r4',1e-15,1e-5,1e-7],
                  ['NKE_BG_param','K_1',1e-6,1e9,0.0124],
                  ['NKE_BG_param','K_2',1e-6,1e9,2000],
                  ['NKE_BG_param','K_3',1e-6,1e9,100],
-                 ['NKE_BG_param','K_4',1e-15,10,1]
+                 ['NKE_BG_param','K_4',1e-15,1e-5,1e-7]
                  ]   
     adjustableParameters=get_adjustableParameters(adjustables)
     full_path = pe_task(file_path, model_name, model_id_base, changes_list, experimentData_files,adjustableParameters,fitExperiments,dict_algorithm_opt_)
@@ -428,11 +428,11 @@ def edit_NKE_BG_4_state_ATPNaZK_SS_free_fit4():
     adjustables=[['NKE_BG_param','kappa_r1',1e-6,1e9,10787],
                  ['NKE_BG_param','kappa_r2',1e-6,1e9,2.3],
                  ['NKE_BG_param','kappa_r3',1e-6,1e9,172042],
-                 ['NKE_BG_param','kappa_r4',1e-15,10,3],
+                 ['NKE_BG_param','kappa_r4',1e-15,1e-5,1e-7],
                  ['NKE_BG_param','K_1',1e-6,1e9,0.0124],
                  ['NKE_BG_param','K_2',1e-6,1e9,2000],
                  ['NKE_BG_param','K_3',1e-6,1e9,100],
-                 ['NKE_BG_param','K_4',1e-15,10,1]
+                 ['NKE_BG_param','K_4',1e-15,1e-5,1e-7]
                  ]    
     adjustableParameters=get_adjustableParameters(adjustables)
     full_path = pe_task(file_path, model_name, model_id_base, changes_list, experimentData_files,adjustableParameters,fitExperiments,dict_algorithm_opt_)
