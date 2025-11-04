@@ -2,9 +2,9 @@ import sys
 import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from sim_edit_func import  assemble_output
-from edit_sedmls import edit_default, edit_Nai, edit_Ko, edit_ATP, edit_ADP, edit_Pi, edit_pH, edit_fig3a, edit_fig3b, edit_fig3c, edit_fig5
+from edit_sedmls import edit_fig2a1, edit_fig2a2, edit_fig2a3, edit_fig2a4, edit_fig2b1, edit_fig2b2, edit_fig2b3,  edit_fig3a, edit_fig3b, edit_fig3c,edit_fig3a_steady, edit_fig3b_steady, edit_fig3c_steady
 from pathlib import Path
-from exp_conditions import write_json,read_json
+from exp_conditions import write_json
 
 parent_path = Path(__file__).parent.parent / 'cad' / 'models'
 simulation_path = Path(__file__).parent.parent / 'cad' / 'models' / 'simulation'
@@ -30,10 +30,17 @@ def edit_NKE_BG_6_state_ATPNaZK_fixedV():
     ids=['_ss_steph_v0']
     sedmls={}
     model_name='NKE_BG_6_state_ATPNaZK_fixedV'
+    sedmls['fig2a1']=edit_fig2a1(model_name,outputs,'fig2a1'+ids[0],params)
+    sedmls['fig2a2']=edit_fig2a2(model_name,outputs,'fig2a2'+ids[0],params)
+    sedmls['fig2a3']=edit_fig2a3(model_name,outputs,'fig2a3'+ids[0],params)
+    sedmls['fig2a4']=edit_fig2a4(model_name,outputs,'fig2a4'+ids[0],params)
+    sedmls['fig2b1']=edit_fig2b1(model_name,outputs,'fig2b1'+ids[0],params)
+    sedmls['fig2b2']=edit_fig2b2(model_name,outputs,'fig2b2'+ids[0],params)
+    sedmls['fig2b3']=edit_fig2b3(model_name,outputs,'fig2b3'+ids[0],params)
     sedmls['fig3a']=edit_fig3a(model_name,outputs,'fig3a'+ids[0],params)
     sedmls['fig3b']=edit_fig3b(model_name,outputs,'fig3b'+ids[0],params)
     sedmls['fig3c']=edit_fig3c(model_name,outputs,'fig3c'+ids[0],params)
-    sedmls['fig5']=edit_fig5(model_name,outputs,'fig5'+ids[0],params)
+
     sedml_jsonfile =model_name + ids[0] + '_sedmls.json'
     write_json(simulation_path / sedml_jsonfile, sedmls)
 
@@ -57,10 +64,16 @@ def edit_NKE_BG_6_state_ATPNaZK_fixedV_withSS():
     ids=['_ss_steph_v0']
     sedmls={}
     model_name='NKE_BG_6_state_ATPNaZK_fixedV_withSS'
-    sedmls['fig3a']=edit_fig3a(model_name,outputs,'fig3a'+ids[0],params)
-    sedmls['fig3b']=edit_fig3b(model_name,outputs,'fig3b'+ids[0],params)
-    sedmls['fig3c']=edit_fig3c(model_name,outputs,'fig3c'+ids[0],params)
-    sedmls['fig5']=edit_fig5(model_name,outputs,'fig5'+ids[0],params)
+    sedmls['fig2a1']=edit_fig2a1(model_name,outputs,'fig2a1'+ids[0],params)
+    sedmls['fig2a2']=edit_fig2a2(model_name,outputs,'fig2a2'+ids[0],params)
+    sedmls['fig2a3']=edit_fig2a3(model_name,outputs,'fig2a3'+ids[0],params)
+    sedmls['fig2a4']=edit_fig2a4(model_name,outputs,'fig2a4'+ids[0],params)
+    sedmls['fig2b1']=edit_fig2b1(model_name,outputs,'fig2b1'+ids[0],params)
+    sedmls['fig2b2']=edit_fig2b2(model_name,outputs,'fig2b2'+ids[0],params)
+    sedmls['fig2b3']=edit_fig2b3(model_name,outputs,'fig2b3'+ids[0],params)
+    sedmls['fig3a']=edit_fig3a_steady(model_name,outputs,'fig3a'+ids[0],params)
+    sedmls['fig3b']=edit_fig3b_steady(model_name,outputs,'fig3b'+ids[0],params)
+    sedmls['fig3c']=edit_fig3c_steady(model_name,outputs,'fig3c'+ids[0],params)
     sedml_jsonfile =model_name + ids[0] + '_sedmls.json'
     write_json(simulation_path / sedml_jsonfile, sedmls)
 

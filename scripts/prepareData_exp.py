@@ -13,12 +13,12 @@ new_csv_file = path_+'Hansen_Nai.csv'
 ss_csv_file_new=path_+'fig3a_cond.csv'
 df_ss_new = pd.DataFrame()
 df_ss_old = pd.read_csv(new_csv_file)
-N_cond=len(df_ss_old['x'])
-
+Nai_values=[5,10, 30, 50, 80]
+N_cond=len(Nai_values)
 u_e=0
 small_value=1e-3
 df_ss_new['u_0_Vm'] = [u_e for i in range(N_cond)]
-df_ss_new['c_Nai'] = df_ss_old['x']
+df_ss_new['c_Nai'] = Nai_values
 df_ss_new['c_Nao']=[5 for i in range(N_cond)]
 df_ss_new['c_Ki']=[80 for i in range(N_cond)]
 df_ss_new['c_Ko']=[15 for i in range(N_cond)]
@@ -27,7 +27,7 @@ df_ss_new['c_ATP']=[2 for i in range(N_cond)]
 df_ss_new['c_ADP']=[small_value for i in range(N_cond)]
 df_ss_new['T']=[308 for i in range(N_cond)]
 df_ss_new['pH']=[7.2 for i in range(N_cond)]
-df_ss_new['v_ss'] = df_ss_old['Cycling rate']
+df_ss_new['v_ss'] = df_ss_old['Cycling rate']/2.08534
 df_ss_new.to_csv(ss_csv_file_new, index=False)
 
 new_csv_file = path_+'nakao_gadsby_Ko_activation_points.csv'
@@ -36,14 +36,15 @@ small_value=1e-3
 ss_csv_file_new=path_+'fig3b_cond.csv'
 df_ss_new = pd.DataFrame()
 df_ss_old = pd.read_csv(new_csv_file)
-N_cond=len(df_ss_old['x'])
+Ke_values=[0.1, 0.3, 1.0, 2.7, 5.4, 10]
+N_cond=len(Ke_values)
 
 u_e=0
 df_ss_new['u_0_Vm'] = [u_e for i in range(N_cond)]
 df_ss_new['c_Nai'] =[50 for i in range(N_cond)]
 df_ss_new['c_Nao']=[150 for i in range(N_cond)]
 df_ss_new['c_Ki']=[140 for i in range(N_cond)]
-df_ss_new['c_Ko']=df_ss_old['x']
+df_ss_new['c_Ko']=Ke_values
 df_ss_new['c_Pi']=[0.5 for i in range(N_cond)]
 df_ss_new['c_ATP']=[10 for i in range(N_cond)]
 df_ss_new['c_ADP']=[0.02 for i in range(N_cond)]
@@ -83,9 +84,10 @@ combine_csv_files(new_csv_file, csv_files)
 ss_csv_file_new=path_+'fig2a_cond_1.csv'
 df_ss_new = pd.DataFrame()
 df_ss_old = pd.read_csv(new_csv_file)
-N_cond=len(df_ss_old['x'])
+vm=[-120, -100, -80, -60, -40, -20, 0, 20, 40, 60]
+N_cond=len(vm)
 
-df_ss_new['u_0_Vm'] = df_ss_old['x']/1000
+df_ss_new['u_0_Vm'] = [float(v)/1000.0 for v in vm]
 df_ss_new['c_Nai'] =[50 for i in range(N_cond)]
 df_ss_new['c_Nao']=[1.5 for i in range(N_cond)]
 df_ss_new['c_Ki']=[small_value for i in range(N_cond)]
@@ -101,9 +103,9 @@ df_ss_new.to_csv(ss_csv_file_new, index=False)
 ss_csv_file_new=path_+'fig2a_cond_2.csv'
 df_ss_new = pd.DataFrame()
 df_ss_old = pd.read_csv(new_csv_file)
-N_cond=len(df_ss_old['x'])
 
-df_ss_new['u_0_Vm'] = df_ss_old['x']/1000
+
+df_ss_new['u_0_Vm'] = [float(v)/1000.0 for v in vm]
 df_ss_new['c_Nai'] =[50 for i in range(N_cond)]
 df_ss_new['c_Nao']=[50 for i in range(N_cond)]
 df_ss_new['c_Ki']=[small_value for i in range(N_cond)]
@@ -119,9 +121,9 @@ df_ss_new.to_csv(ss_csv_file_new, index=False)
 ss_csv_file_new=path_+'fig2a_cond_3.csv'
 df_ss_new = pd.DataFrame()
 df_ss_old = pd.read_csv(new_csv_file)
-N_cond=len(df_ss_old['x'])
 
-df_ss_new['u_0_Vm'] = df_ss_old['x']/1000
+
+df_ss_new['u_0_Vm'] = [float(v)/1000.0 for v in vm]
 df_ss_new['c_Nai'] =[50 for i in range(N_cond)]
 df_ss_new['c_Nao']=[100 for i in range(N_cond)]
 df_ss_new['c_Ki']=[small_value for i in range(N_cond)]
@@ -137,9 +139,8 @@ df_ss_new.to_csv(ss_csv_file_new, index=False)
 ss_csv_file_new=path_+'fig2a_cond_4.csv'
 df_ss_new = pd.DataFrame()
 df_ss_old = pd.read_csv(new_csv_file)
-N_cond=len(df_ss_old['x'])
 
-df_ss_new['u_0_Vm'] = df_ss_old['x']/1000
+df_ss_new['u_0_Vm'] = [float(v)/1000.0 for v in vm]
 df_ss_new['c_Nai'] =[50 for i in range(N_cond)]
 df_ss_new['c_Nao']=[150 for i in range(N_cond)]
 df_ss_new['c_Ki']=[small_value for i in range(N_cond)]
@@ -163,9 +164,10 @@ C_m = 183
 ss_csv_file_new=path_+'fig2b_cond_1.csv'
 df_ss_new = pd.DataFrame()
 df_ss_old = pd.read_csv(new_csv_file)
-N_cond=len(df_ss_old['x'])
+vm=[-140,-120, -100, -80, -60, -40, -20, 0, 20, 40, 60]
+N_cond=len(vm)
 
-df_ss_new['u_0_Vm'] = df_ss_old['x']/1000
+df_ss_new['u_0_Vm'] = [float(v)/1000.0 for v in vm]
 df_ss_new['c_Nai'] =[50 for i in range(N_cond)]
 df_ss_new['c_Nao']=[50 for i in range(N_cond)]
 df_ss_new['c_Ki']=[small_value for i in range(N_cond)]
@@ -181,9 +183,8 @@ df_ss_new.to_csv(ss_csv_file_new, index=False)
 ss_csv_file_new=path_+'fig2b_cond_2.csv'
 df_ss_new = pd.DataFrame()
 df_ss_old = pd.read_csv(new_csv_file)
-N_cond=len(df_ss_old['x'])
 
-df_ss_new['u_0_Vm'] = df_ss_old['x']/1000
+df_ss_new['u_0_Vm'] = [float(v)/1000.0 for v in vm]
 df_ss_new['c_Nai'] =[50 for i in range(N_cond)]
 df_ss_new['c_Nao']=[100 for i in range(N_cond)]
 df_ss_new['c_Ki']=[small_value for i in range(N_cond)]
@@ -199,9 +200,8 @@ df_ss_new.to_csv(ss_csv_file_new, index=False)
 ss_csv_file_new=path_+'fig2b_cond_3.csv'
 df_ss_new = pd.DataFrame()
 df_ss_old = pd.read_csv(new_csv_file)
-N_cond=len(df_ss_old['x'])
 
-df_ss_new['u_0_Vm'] = df_ss_old['x']/1000
+df_ss_new['u_0_Vm'] = [float(v)/1000.0 for v in vm]
 df_ss_new['c_Nai'] =[50 for i in range(N_cond)]
 df_ss_new['c_Nao']=[150 for i in range(N_cond)]
 df_ss_new['c_Ki']=[small_value for i in range(N_cond)]

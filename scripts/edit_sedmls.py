@@ -11,10 +11,108 @@ simulation_path = Path(__file__).parent.parent / 'cad' / 'models' / 'simulation'
 dict_algorithm_timecourse=dict_algorithm_cvode_timecourse()
 dict_algorithm_oneStep=dict_algorithm_cvode_oneStep()
 
-
-
-def edit_fig3a(model_name,outputs,model_id_base = 'fig3a',params=None,dict_algorithm_oneStep=dict_algorithm_oneStep):
+def edit_fig2a1(model_name,outputs,model_id_base = 'fig2a1',params=None,dict_algorithm_oneStep=dict_algorithm_oneStep):
     
+    json_path = simulation_path / f'fig2a_cond_1.json'
+    changes=read_json(json_path)
+    conditions=get_conditions(changes)
+    outputs.update(conditions)
+    stepSize=10
+    if params is not None:
+        for change in changes:
+            change.update(params)
+    sedml_file=sedtask_oneStep(parent_path,model_name, model_id_base,changes,outputs,dict_algorithm_oneStep,stepSize)
+    return sedml_file
+
+def edit_fig2a2(model_name,outputs,model_id_base = 'fig2a2',params=None,dict_algorithm_oneStep=dict_algorithm_oneStep):
+
+    json_path = simulation_path / f'fig2a_cond_2.json'
+    changes=read_json(json_path)
+    conditions=get_conditions(changes)
+    outputs.update(conditions)
+    stepSize=10
+    if params is not None:
+        for change in changes:
+            change.update(params)
+    sedml_file=sedtask_oneStep(parent_path,model_name, model_id_base,changes,outputs,dict_algorithm_oneStep,stepSize)
+    return sedml_file
+def edit_fig2a3(model_name,outputs,model_id_base = 'fig2a3',params=None,dict_algorithm_oneStep=dict_algorithm_oneStep):
+
+    json_path = simulation_path / f'fig2a_cond_3.json'
+    changes=read_json(json_path)
+    conditions=get_conditions(changes)
+    outputs.update(conditions)
+    stepSize=10
+    if params is not None:
+        for change in changes:
+            change.update(params)
+    sedml_file=sedtask_oneStep(parent_path,model_name, model_id_base,changes,outputs,dict_algorithm_oneStep,stepSize)
+    return sedml_file
+
+def edit_fig2a4(model_name,outputs,model_id_base = 'fig2a4',params=None,dict_algorithm_oneStep=dict_algorithm_oneStep):
+
+    json_path = simulation_path / f'fig2a_cond_4.json'
+    changes=read_json(json_path)
+    conditions=get_conditions(changes)
+    outputs.update(conditions)
+    stepSize=10
+    if params is not None:
+        for change in changes:
+            change.update(params)
+    sedml_file=sedtask_oneStep(parent_path,model_name, model_id_base,changes,outputs,dict_algorithm_oneStep,stepSize)
+    return sedml_file
+
+def edit_fig2b1(model_name,outputs,model_id_base = 'fig2b1',params=None,dict_algorithm_oneStep=dict_algorithm_oneStep):
+
+    json_path = simulation_path / f'fig2b_cond_1.json'
+    changes=read_json(json_path)
+    conditions=get_conditions(changes)
+    outputs.update(conditions)
+    stepSize=10
+    if params is not None:
+        for change in changes:
+            change.update(params)
+    sedml_file=sedtask_oneStep(parent_path,model_name, model_id_base,changes,outputs,dict_algorithm_oneStep,stepSize)
+    return sedml_file
+
+def edit_fig2b2(model_name,outputs,model_id_base = 'fig2b2',params=None,dict_algorithm_oneStep=dict_algorithm_oneStep):
+    json_path = simulation_path / f'fig2b_cond_2.json'
+    changes=read_json(json_path)
+    conditions=get_conditions(changes)
+    outputs.update(conditions)
+    stepSize=10
+    if params is not None:
+        for change in changes:
+            change.update(params)
+    sedml_file=sedtask_oneStep(parent_path,model_name, model_id_base,changes,outputs,dict_algorithm_oneStep,stepSize)
+    return sedml_file
+def edit_fig2b3(model_name,outputs,model_id_base = 'fig2b3',params=None,dict_algorithm_oneStep=dict_algorithm_oneStep):
+
+    json_path = simulation_path / f'fig2b_cond_3.json'
+    changes=read_json(json_path)
+    conditions=get_conditions(changes)
+    outputs.update(conditions)
+    stepSize=10
+    if params is not None:
+        for change in changes:
+            change.update(params)
+    sedml_file=sedtask_oneStep(parent_path,model_name, model_id_base,changes,outputs,dict_algorithm_oneStep,stepSize)
+    return sedml_file
+def edit_fig3a(model_name,outputs,model_id_base = 'fig3a',params=None,dict_algorithm_oneStep=dict_algorithm_oneStep):
+
+    json_path = simulation_path / f'fig3a_cond.json'
+    changes=read_json(json_path)
+    conditions=get_conditions(changes)
+    outputs.update(conditions)
+    stepSize=10
+    if params is not None:
+        for change in changes:
+            change.update(params)
+    sedml_file=sedtask_oneStep(parent_path,model_name, model_id_base,changes,outputs,dict_algorithm_oneStep,stepSize)
+    return sedml_file
+
+def edit_fig3a_steady(model_name,outputs,model_id_base = 'fig3a_steady',params=None,dict_algorithm_oneStep=dict_algorithm_oneStep):
+
     json_path = simulation_path / f'Terkildsen_NaK_kinetic_Nai_cond.json'
     changes=read_json(json_path)
     conditions=get_conditions(changes)
@@ -28,6 +126,19 @@ def edit_fig3a(model_name,outputs,model_id_base = 'fig3a',params=None,dict_algor
 
 def edit_fig3b(model_name,outputs,model_id_base = 'fig3b',params=None,dict_algorithm_oneStep=dict_algorithm_oneStep):
 
+    json_path = simulation_path / f'fig3b_cond.json'
+    changes=read_json(json_path)
+    conditions=get_conditions(changes)
+    outputs.update(conditions)
+    stepSize=10
+    if params is not None:
+        for change in changes:
+            change.update(params)
+    sedml_file=sedtask_oneStep(parent_path,model_name, model_id_base,changes,outputs,dict_algorithm_oneStep,stepSize)
+    return sedml_file
+
+def edit_fig3b_steady(model_name,outputs,model_id_base = 'fig3b_steady',params=None,dict_algorithm_oneStep=dict_algorithm_oneStep):
+
     json_path = simulation_path / f'Terkildsen_NaK_kinetic_Ke_cond.json'
     changes=read_json(json_path)
     conditions=get_conditions(changes)
@@ -40,6 +151,18 @@ def edit_fig3b(model_name,outputs,model_id_base = 'fig3b',params=None,dict_algor
     return sedml_file
 
 def edit_fig3c(model_name,outputs,model_id_base = 'fig3c',params=None,dict_algorithm_oneStep=dict_algorithm_oneStep):
+    json_path = simulation_path / f'fig3c_cond.json'
+    changes=read_json(json_path)
+    conditions=get_conditions(changes)
+    outputs.update(conditions)
+    stepSize=10
+    if params is not None:
+        for change in changes:
+            change.update(params)
+    sedml_file=sedtask_oneStep(parent_path,model_name, model_id_base,changes,outputs,dict_algorithm_oneStep,stepSize)
+    return sedml_file
+
+def edit_fig3c_steady(model_name,outputs,model_id_base = 'fig3c_steady',params=None,dict_algorithm_oneStep=dict_algorithm_oneStep):
     json_path = simulation_path / f'Terkildsen_NaK_kinetic_ATP_cond.json'
     changes=read_json(json_path)
     conditions=get_conditions(changes)

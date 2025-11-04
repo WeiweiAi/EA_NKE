@@ -44,7 +44,7 @@ ss_csv_file_Nai=path_+'Terkildsen_NaK_kinetic_Fig3b_Data.csv'
 csv_files=[(ss_csv_file_Nai, 0, 0),
            (ss_csv_file_Nai, 3, 3), (ss_csv_file_Nai, 11, 11),(ss_csv_file_Nai, 21, 21),(ss_csv_file_Nai, 31, 31), 
            (ss_csv_file_Nai, 41, 41), (ss_csv_file_Nai, 51, 51), (ss_csv_file_Nai, 61, 61),
-            (ss_csv_file_Nai, 81, 81), (ss_csv_file_Nai, 101, 101),(ss_csv_file_Nai, 201, 201)]
+            (ss_csv_file_Nai, 81, 81), (ss_csv_file_Nai, 109, 109),(ss_csv_file_Nai, 201, 201)]
 combine_csv_files(new_csv_file, csv_files)
 
 small_value=1e-3
