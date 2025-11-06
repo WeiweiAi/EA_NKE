@@ -103,7 +103,8 @@ def edit_NKE_BG_6_state_ATPNaZK_ss():
                  ['NKE_BG_param','K_3',10,1e5,2000],
                  ['NKE_BG_param','K_4',1e-2,1e4,100],
                  ['NKE_BG_param','K_5',1e-3,10,0.32],
-                 ['NKE_BG_param','K_6',1e3,1e6,6e4]
+                 ['NKE_BG_param','K_6',1e3,1e6,6e4],
+                 ['NKE_BG_param','z_z1',-3,3,-0.9],
                  ]    
     adjustableParameters=get_adjustableParameters(adjustables)
     full_path = pe_task(file_path, model_name, model_id_base, changes_list, experimentData_files,adjustableParameters,fitExperiments,dict_algorithm_opt_)
@@ -141,7 +142,8 @@ def edit_NKE_BG_6_state_ATP_Na():
                  ['NKE_BG_param','K_3',10,1e6,7000],
                  ['NKE_BG_param','K_4',1,1e4,400],
                  ['NKE_BG_param','K_5',1e-4,100,1],
-                 ['NKE_BG_param','K_6',1e3,1e8,4e6]
+                 ['NKE_BG_param','K_6',1e3,1e8,4e6],
+                 ['NKE_BG_param','z_z1',-3,3,-0.9]
                  ]    
     adjustableParameters=get_adjustableParameters(adjustables)    
     
@@ -200,7 +202,8 @@ def edit_NKE_BG_6_state_ATP_Na_ss():
                  ['NKE_BG_param','K_3',10,1e6,7000],
                  ['NKE_BG_param','K_4',1,1e4,400],
                  ['NKE_BG_param','K_5',1e-4,100,1],
-                 ['NKE_BG_param','K_6',1e3,1e8,4e6]
+                 ['NKE_BG_param','K_6',1e3,1e8,4e6],
+                 ['NKE_BG_param','z_z1',-3,3,-0.9]
                  ]    
     adjustableParameters=get_adjustableParameters(adjustables)    
     
@@ -297,7 +300,8 @@ def edit_NKE_BG_6_state_ATPNa_ss():
                  ['NKE_BG_param','K_3',10,1e5,2000],
                  ['NKE_BG_param','K_4',1e-2,1e4,100],
                  ['NKE_BG_param','K_5',1e-3,10,0.32],
-                 ['NKE_BG_param','K_6',1e3,1e6,6e4]
+                 ['NKE_BG_param','K_6',1e3,1e6,6e4],
+                 ['NKE_BG_param','z_z1',-3,3,-0.9]
                  ]    
     adjustableParameters=get_adjustableParameters(adjustables)    
     
