@@ -97,7 +97,7 @@ def edit_NKE_BG_6_state_ATPNaZK_ss():
                  ['NKE_BG_param','K_1',1e-4,1,0.0124],
                  ['NKE_BG_param','K_4',1e-2,1e4,100]
                  ]    
-    adjustableParameters=get_adjustableParameters(adjustables)
+    adjustableParameters=get_adjustableParameters(adjustables,fit_refs)
     full_path = pe_task(file_path, model_name, model_id_base, changes_list, experimentData_files,adjustableParameters,fitExperiments,dict_algorithm_opt_)
     return full_path
 
@@ -238,7 +238,7 @@ def edit_NKE_BG_6_state_ATP_Na_ss():
                  ['NKE_BG_param','kappa_r6',10,1e4,300],
                  ['NKE_BG_param','K_1',1e-4,1,0.08]
                  ]    
-    adjustableParameters=get_adjustableParameters(adjustables)    
+    adjustableParameters=get_adjustableParameters(adjustables,fit_refs)    
     
     full_path = pe_task(file_path, model_name, model_id_base, changes_list, experimentData_files,adjustableParameters,fitExperiments,dict_algorithm_opt_)
     return full_path
@@ -327,7 +327,7 @@ def edit_NKE_BG_6_state_ATPNa_ss():
                  ['NKE_BG_param','K_1',1e-4,1,0.0124],
                  ['NKE_BG_param','K_4',1e-2,1e4,100]
                  ]    
-    adjustableParameters=get_adjustableParameters(adjustables)    
+    adjustableParameters=get_adjustableParameters(adjustables,fit_refs)    
     
     full_path = pe_task(file_path, model_name, model_id_base, changes_list, experimentData_files,adjustableParameters,fitExperiments,dict_algorithm_opt_)
     return full_path
