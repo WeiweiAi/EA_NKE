@@ -270,13 +270,13 @@ def edit_NKE_BG_4_state_ATPNaZK_SS_free():
     fitExperiments['fit_4']={'type':fitting_type,'algorithm':dict_algorithm_oneStep,'experimentalConditions':experimentalConditions_map_4,'observables':observables_map_4}
     
     fit_refs=['fit_1','fit_2','fit_3','fit_4']
-    adjustables=[['NKE_BG_param','kappa_r1',1e-6,1e15,10787],
-                 ['NKE_BG_param','kappa_r2',1e-6,1e15,2.3],
-                 ['NKE_BG_param','kappa_r3',1e-6,1e15,172042],
+    adjustables=[['NKE_BG_param','kappa_r1',1e-6,1e20,10787],
+                 ['NKE_BG_param','kappa_r2',1e-6,1e20,2.3],
+                 ['NKE_BG_param','kappa_r3',1e-6,1e20,172042],
                  ['NKE_BG_param','kappa_r4',1e-15,1e5,1e-7],
-                 ['NKE_BG_param','K_1',1e-6,1e15,0.0124],
-                 ['NKE_BG_param','K_2',1e-6,1e15,2000],
-                 ['NKE_BG_param','K_3',1e-6,1e15,100],
+                 ['NKE_BG_param','K_1',1e-6,1e20,0.0124],
+                 ['NKE_BG_param','K_2',1e-6,1e20,2000],
+                 ['NKE_BG_param','K_3',1e-6,1e20,100],
                  ['NKE_BG_param','K_4',1e-15,1e5,1e-7],
                  ['NKE_BG_param','z_z1',-3,3,0.9]
                  ]    
