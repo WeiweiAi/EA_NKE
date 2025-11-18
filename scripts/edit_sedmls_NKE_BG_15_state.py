@@ -19,16 +19,23 @@ def edit_15state():
     electrical_storage_list=['Vm']
     time='t'
     outputs=assemble_output(component_name,reaction_list,storage_list,electrical_storage_list,time)
-
+    T_0=[0.6, 0.8, 1.0, 1.2]
     NKE_BG_15_state_sedmls={}
     model_name='NKE_BG_15_state'
-    NKE_BG_15_state_sedmls['default']=edit_default(model_name,outputs)
-    NKE_BG_15_state_sedmls['Nai']=edit_Nai(model_name,outputs)
-    NKE_BG_15_state_sedmls['Ko']=edit_Ko(model_name,outputs)
-    NKE_BG_15_state_sedmls['ATP']=edit_ATP(model_name,outputs)
-    NKE_BG_15_state_sedmls['ADP']=edit_ADP(model_name,outputs)
-    NKE_BG_15_state_sedmls['Pi']=edit_Pi(model_name,outputs)
-    NKE_BG_15_state_sedmls['pH']=edit_pH(model_name,outputs)
+    for T in T_0:
+        params={'T_0':{'component':'NKE_BG_Env','name':'T_0','newValue':str(T)},
+        }
+        startTime=T-0.2
+        endTime=6*T-0.2  
+        numSteps=int((endTime - startTime)*1000)
+        ids='_T'+str(int(T*1000))+'ms'             
+        NKE_BG_15_state_sedmls[f'default'+ids]=edit_default(model_name,outputs,model_id_base=f'default'+ids,params=params,startTime=startTime,endTime=endTime,numSteps=numSteps)
+        NKE_BG_15_state_sedmls[f'Nai'+ids]=edit_Nai(model_name,outputs,model_id_base=f'Nai'+ids,params=params,startTime=startTime,endTime=endTime,numSteps=numSteps)
+        NKE_BG_15_state_sedmls[f'Ko'+ids]=edit_Ko(model_name,outputs,model_id_base=f'Ko'+ids,params=params,startTime=startTime,endTime=endTime,numSteps=numSteps)
+        NKE_BG_15_state_sedmls[f'ATP'+ids]=edit_ATP(model_name,outputs,model_id_base=f'ATP'+ids,params=params,startTime=startTime,endTime=endTime,numSteps=numSteps)
+        NKE_BG_15_state_sedmls[f'ADP'+ids]=edit_ADP(model_name,outputs,model_id_base=f'ADP'+ids,params=params,startTime=startTime,endTime=endTime,numSteps=numSteps)
+        NKE_BG_15_state_sedmls[f'Pi'+ids]=edit_Pi(model_name,outputs,model_id_base=f'Pi'+ids,params=params,startTime=startTime,endTime=endTime,numSteps=numSteps)
+        NKE_BG_15_state_sedmls[f'pH'+ids]=edit_pH(model_name,outputs,model_id_base=f'pH'+ids,params=params,startTime=startTime,endTime=endTime,numSteps=numSteps)
     sedml_jsonfile =model_name + '_sedmls.json'
     write_json(simulation_path / sedml_jsonfile, NKE_BG_15_state_sedmls)
 
