@@ -17,10 +17,11 @@ def run_simulation(full_path,rel_out_path='./simulation', external_variables_inf
     exec_sed_doc(doc, working_dir, working_dir, rel_out_path=rel_out_path, external_variables_info=external_variables_info,
                   external_variables_values=external_variables_values,ss_time=ss_time,cost_type=cost_type)
 
-def run_sim_jsons (sedml_jsonfiles):
+def run_sim_jsons (sedml_jsonfiles, external_variables_info={},
+                  external_variables_values=[]):
     for sedml_jsonfile in sedml_jsonfiles:
         full_path = simulation_path / sedml_jsonfile
         sedml_dict = read_json(full_path)
         for sedml_file in sedml_dict.values():
-            run_simulation(parent_path / sedml_file)
-   
+            run_simulation(parent_path / sedml_file, external_variables_info=external_variables_info,
+                           external_variables_values=external_variables_values)

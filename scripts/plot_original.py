@@ -58,8 +58,12 @@ def new_lines_ss(dict_data,color='b',label='', ss='v_r1'):
 def plot_cfg_ss(lines_dict):
     plot_cfg = {}
     for plot_id, line_group in lines_dict.items():
-        plot_cfg[plot_id] = {'ylabel': 'cycle rate', 'xlabel': line_group['xlabel'],'show_grid': 'both', 'grid_axis': 'both',  'title_y': -0.3,
-                'line': line_group['line'], 'legend': line_group['line']}
+        if plot_id == 1:
+            plot_cfg[plot_id] = {'ylabel': 'cycle rate (s$^{-1}$)', 'xlabel': line_group['xlabel'],'show_grid': 'both', 'grid_axis': 'both',  'title_y': -0.3,
+                'line': line_group['line'], 'legend': line_group['line'],'lgdncol': 2}
+        else:
+            plot_cfg[plot_id] = {'ylabel': 'cycle rate', 'xlabel': line_group['xlabel'],'show_grid': 'both', 'grid_axis': 'both',  'title_y': -0.3,
+                'line': line_group['line']}
 
     return plot_cfg
 
@@ -68,6 +72,7 @@ if __name__ == '__main__':
     
     save_fig = {'save_fig': True, 'fig_format': 'tif', 'file_path': simulation_path.as_posix()+'/', 'filename': 'NKE_BG_6_state_ATPNaZK'}
     fig_cfg = {'num_rows': 2, 'num_cols': 2, 'width':7.5, 'height':6, 'fig_title': None, 'title_y': 1, 'fontsize': 8, 
+               'legend_kwargs': {'fontsize': 6, 'loc': 'best', 'ncols': 2},
            'left': 0.1, 'bottom': 0.15, 'right': 0.9, 'top': 0.95, 'wspace': 0.2, 'hspace': 0.4}|save_fig
     
     data_dict_15state={'u_Vm': 'report_task_NKE_BG_15_state_fixedV_fig5',
@@ -75,28 +80,72 @@ if __name__ == '__main__':
                'c_Ko': 'report_task_NKE_BG_15_state_fixedV_fig3b',
                'c_ATP': 'report_task_NKE_BG_15_state_fixedV_fig3c'}
     
-    data_dict_6state={'u_Vm': 'report_task_NKE_BG_6_state_ATPNa_fixedV_fig5',
-               'c_Nai': 'report_task_NKE_BG_6_state_ATPNa_fixedV_fig3a',
-               'c_Ko': 'report_task_NKE_BG_6_state_ATPNa_fixedV_fig3b',
-               'c_ATP': 'report_task_NKE_BG_6_state_ATPNa_fixedV_fig3c'}
-    
-    data_dict_6state_zk={'u_Vm': 'report_task_NKE_BG_6_state_ATPNaZK_fixedV_fig5',
-               'c_Nai': 'report_task_NKE_BG_6_state_ATPNaZK_fixedV_fig3a',
-               'c_Ko': 'report_task_NKE_BG_6_state_ATPNaZK_fixedV_fig3b',
-               'c_ATP': 'report_task_NKE_BG_6_state_ATPNaZK_fixedV_fig3c'}
-    
-    lines_dict={1:{'xlabel': 'potential (mV)', 'line':['volt', 'u_Vm_15-state', 'u_Vm_6-state', 'u_Vm_6-state_zk']},
-                2:{'xlabel': 'Na_i (mM)', 'line':['Nai', 'c_Nai_15-state', 'c_Nai_6-state', 'c_Nai_6-state_zk']},
-                3:{'xlabel': 'K_e (mM)', 'line':['Ke', 'c_Ko_15-state', 'c_Ko_6-state', 'c_Ko_6-state_zk']},
-                4:{'xlabel': 'ATP (mM)', 'line':['ATP', 'c_ATP_15-state', 'c_ATP_6-state', 'c_ATP_6-state_zk']}}
+    data_dict_6state_v1_time_free={'u_Vm': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_fig5_time',
+               'c_Nai': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_fig3a_time',
+               'c_Ko': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_fig3b_time',
+               'c_ATP': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_fig3c_time'}
 
+    data_dict_6state_v1_ss_free={'u_Vm': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_fig5_ss',
+               'c_Nai': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_fig3a_ss',
+               'c_Ko': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_fig3b_ss',
+               'c_ATP': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_fig3c_ss'}
+    
+    data_dict_6state_v2_time_free={'u_Vm': 'report_task_NKE_BG_6_state_ATPNa_free_fixedV_fig5_time',
+               'c_Nai': 'report_task_NKE_BG_6_state_ATPNa_free_fixedV_fig3a_time',
+               'c_Ko': 'report_task_NKE_BG_6_state_ATPNa_free_fixedV_fig3b_time',
+               'c_ATP': 'report_task_NKE_BG_6_state_ATPNa_free_fixedV_fig3c_time'}
+
+    data_dict_6state_v2_ss_free={'u_Vm': 'report_task_NKE_BG_6_state_ATPNa_free_fixedV_fig5_ss',
+               'c_Nai': 'report_task_NKE_BG_6_state_ATPNa_free_fixedV_fig3a_ss',
+               'c_Ko': 'report_task_NKE_BG_6_state_ATPNa_free_fixedV_fig3b_ss',
+               'c_ATP': 'report_task_NKE_BG_6_state_ATPNa_free_fixedV_fig3c_ss'}
+    
+    data_dict_6state_v1_time={'u_Vm': 'report_task_NKE_BG_6_state_ATPNaZK_fixedV_fig5_time',
+               'c_Nai': 'report_task_NKE_BG_6_state_ATPNaZK_fixedV_fig3a_time',
+               'c_Ko': 'report_task_NKE_BG_6_state_ATPNaZK_fixedV_fig3b_time',
+               'c_ATP': 'report_task_NKE_BG_6_state_ATPNaZK_fixedV_fig3c_time'}
+    
+    data_dict_6state_v1_ss={'u_Vm': 'report_task_NKE_BG_6_state_ATPNaZK_fixedV_fig5_ss',
+               'c_Nai': 'report_task_NKE_BG_6_state_ATPNaZK_fixedV_fig3a_ss',
+               'c_Ko': 'report_task_NKE_BG_6_state_ATPNaZK_fixedV_fig3b_ss',
+               'c_ATP': 'report_task_NKE_BG_6_state_ATPNaZK_fixedV_fig3c_ss'}    
+    
+    data_dict_6state_v2_time={'u_Vm': 'report_task_NKE_BG_6_state_ATPNa_fixedV_fig5_time',
+               'c_Nai': 'report_task_NKE_BG_6_state_ATPNa_fixedV_fig3a_time',   
+               'c_Ko': 'report_task_NKE_BG_6_state_ATPNa_fixedV_fig3b_time',    
+               'c_ATP': 'report_task_NKE_BG_6_state_ATPNa_fixedV_fig3c_time'}   
+    
+    data_dict_6state_v2_ss={'u_Vm': 'report_task_NKE_BG_6_state_ATPNa_fixedV_fig5_ss',
+               'c_Nai': 'report_task_NKE_BG_6_state_ATPNa_fixedV_fig3a_ss',   
+               'c_Ko': 'report_task_NKE_BG_6_state_ATPNa_fixedV_fig3b_ss',           
+               'c_ATP': 'report_task_NKE_BG_6_state_ATPNa_fixedV_fig3c_ss'}         
+    
+    line_suffix=['15-state','6-state_v1_time','6-state_v1_ss','6-state_v2_time','6-state_v2_ss','6-state_v1_time_free','6-state_v1_ss_free','6-state_v2_time_free','6-state_v2_ss_free']
+    # construct lines for 15-state and 6-state model
+    lines_dict={1:{'xlabel': 'potential (mV)', 'line':['volt', 'u_Vm_'+line_suffix[0], 'u_Vm_'+line_suffix[1], 'u_Vm_'+line_suffix[2], 'u_Vm_'+line_suffix[3], 'u_Vm_'+line_suffix[4], 'u_Vm_'+line_suffix[5], 'u_Vm_'+line_suffix[6], 'u_Vm_'+line_suffix[7], 'u_Vm_'+line_suffix[8]]},
+                2:{'xlabel': 'Na_i (mM)', 'line':['Nai', 'c_Nai_'+line_suffix[0], 'c_Nai_'+line_suffix[1], 'c_Nai_'+line_suffix[2], 'c_Nai_'+line_suffix[3], 'c_Nai_'+line_suffix[4], 'c_Nai_'+line_suffix[5], 'c_Nai_'+line_suffix[6], 'c_Nai_'+line_suffix[7], 'c_Nai_'+line_suffix[8]]},
+                3:{'xlabel': 'K_e (mM)', 'line':['Ke', 'c_Ko_'+line_suffix[0], 'c_Ko_'+line_suffix[1], 'c_Ko_'+line_suffix[2], 'c_Ko_'+line_suffix[3], 'c_Ko_'+line_suffix[4], 'c_Ko_'+line_suffix[5], 'c_Ko_'+line_suffix[6], 'c_Ko_'+line_suffix[7], 'c_Ko_'+line_suffix[8]]},
+                4:{'xlabel': 'ATP (mM)', 'line':['ATP', 'c_ATP_'+line_suffix[0], 'c_ATP_'+line_suffix[1], 'c_ATP_'+line_suffix[2], 'c_ATP_'+line_suffix[3], 'c_ATP_'+line_suffix[4], 'c_ATP_'+line_suffix[5], 'c_ATP_'+line_suffix[6], 'c_ATP_'+line_suffix[7], 'c_ATP_'+line_suffix[8]]}}
+    
     line_cfg_15state=new_lines_ss(data_dict_15state,'b','15-state')
-    line_cfg_6state=new_lines_ss(data_dict_6state,'r','6-state')
-    line_cfg_Hill=new_lines_ss(data_dict_6state_zk,'g','6-state_zk')
+    line_cfg_6state_v1_time=new_lines_ss(data_dict_6state_v1_time,'r','6-state_v1_time')
+    line_cfg_6state_v1_ss=new_lines_ss(data_dict_6state_v1_ss,'g','6-state_v1_ss')
+    line_cfg_6state_v2_time=new_lines_ss(data_dict_6state_v2_time,'m','6-state_v2_time')
+    line_cfg_6state_v2_ss=new_lines_ss(data_dict_6state_v2_ss,'c','6-state_v2_ss')
+    line_cfg_6state_v1_time_free=new_lines_ss(data_dict_6state_v1_time_free,'orange','6-state_v1_time_free')
+    line_cfg_6state_v1_ss_free=new_lines_ss(data_dict_6state_v1_ss_free,'purple','6-state_v1_ss_free')
+    line_cfg_6state_v2_time_free=new_lines_ss(data_dict_6state_v2_time_free,'brown','6-state_v2_time_free')
+    line_cfg_6state_v2_ss_free=new_lines_ss(data_dict_6state_v2_ss_free,'pink','6-state_v2_ss_free')
     original_line_cfg=original_lines_ss()
     original_line_cfg.update(line_cfg_15state)
-    original_line_cfg.update(line_cfg_6state)
-    original_line_cfg.update(line_cfg_Hill)
+    original_line_cfg.update(line_cfg_6state_v1_time)
+    original_line_cfg.update(line_cfg_6state_v1_ss)
+    original_line_cfg.update(line_cfg_6state_v2_time)
+    original_line_cfg.update(line_cfg_6state_v2_ss)
+    original_line_cfg.update(line_cfg_6state_v1_time_free)
+    original_line_cfg.update(line_cfg_6state_v1_ss_free)
+    original_line_cfg.update(line_cfg_6state_v2_time_free)
+    original_line_cfg.update(line_cfg_6state_v2_ss_free)
     plot_cfg = plot_cfg_ss(lines_dict)
 
     plot_line2D(fig_cfg, plot_cfg, original_line_cfg)

@@ -1,10 +1,9 @@
 import sys
 import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from sim_edit_func import sedtask, assemble_output,sedtask_oneStep,dict_algorithm_cvode_timecourse,dict_algorithm_cvode_oneStep,get_conditions
+from sim_edit_func import sedtask, sedtask_oneStep,dict_algorithm_cvode_timecourse,dict_algorithm_cvode_oneStep,get_conditions
 from pathlib import Path
-from exp_conditions import read_json,write_json
-
+from exp_conditions import read_json
 parent_path = Path(__file__).parent.parent / 'cad' / 'models'
 simulation_path = Path(__file__).parent.parent / 'cad' / 'models' / 'simulation'
 
@@ -199,6 +198,17 @@ def edit_default(model_name,outputs,model_id_base = 'default',params=None,dict_a
 
 def edit_Nai(model_name,outputs,model_id_base = 'Nai',params=None,dict_algorithm_timecourse=dict_algorithm_timecourse,startTime=0.5, endTime=5.5, numSteps=5000):
     json_path = simulation_path / f'NKE_BG_Env_Nai.json'
+    changes=read_json(json_path)
+    conditions=get_conditions(changes)
+    outputs.update(conditions)
+    if params is not None:
+        for change in changes:
+            change.update(params)
+    sedml_file=sedtask(parent_path,model_name, model_id_base,changes,outputs,dict_algorithm_timecourse,startTime, endTime, numSteps)
+    return sedml_file
+
+def edit_NaiATP(model_name,outputs,model_id_base = 'NaiATP',params=None,dict_algorithm_timecourse=dict_algorithm_timecourse,startTime=0.5, endTime=5.5, numSteps=5000):
+    json_path = simulation_path / f'NKE_BG_Env_NaiATP.json'
     changes=read_json(json_path)
     conditions=get_conditions(changes)
     outputs.update(conditions)

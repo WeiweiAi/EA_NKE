@@ -270,23 +270,23 @@ def plot_cfg_ss(lines_dict):
 if __name__ == '__main__':
     
     save_fig_fig2a = {'save_fig': True, 'fig_format': 'eps', 'file_path': simulation_path.as_posix()+'/', 'filename': 'NKE_BG_6_state_fig2a_fit'}
-    fig_cfg_fig2a = {'num_rows': 1, 'num_cols': 1, 'width':4, 'height':5, 'fig_title': None, 'title_y': 1, 'fontsize': 8, 
+    fig_cfg_fig2a = {'num_rows': 1, 'num_cols': 1, 'width':3.5, 'height':3.5, 'fig_title': None, 'title_y': 1, 'fontsize': 8, 
                'legend_kwargs': {'fontsize': 6, 'loc': 'best', 'ncols': 2},
            'left': 0.15, 'bottom': 0.15, 'right': 0.9, 'top': 0.95, 'wspace': 0.2, 'hspace': 0.4}|save_fig_fig2a
     save_fig_fig2b = {'save_fig': True, 'fig_format': 'eps', 'file_path': simulation_path.as_posix()+'/', 'filename': 'NKE_BG_6_state_fig2b_fit'}
-    fig_cfg_fig2b = {'num_rows': 1, 'num_cols': 1, 'width':4, 'height':5, 'fig_title': None, 'title_y': 1, 'fontsize': 8, 
+    fig_cfg_fig2b = {'num_rows': 1, 'num_cols': 1, 'width':3.5, 'height':3.5, 'fig_title': None, 'title_y': 1, 'fontsize': 8, 
                'legend_kwargs': {'fontsize': 6, 'loc': 'best', 'ncols': 2},
            'left': 0.15, 'bottom': 0.15, 'right': 0.9, 'top': 0.95, 'wspace': 0.2, 'hspace': 0.4}|save_fig_fig2b
     save_fig_fig3a = {'save_fig': True, 'fig_format': 'eps', 'file_path': simulation_path.as_posix()+'/', 'filename': 'NKE_BG_6_state_fig3a_fit'}
-    fig_cfg_fig3a = {'num_rows': 1, 'num_cols': 1, 'width':4, 'height':5, 'fig_title': None, 'title_y': 1, 'fontsize': 8, 
+    fig_cfg_fig3a = {'num_rows': 1, 'num_cols': 1, 'width':3.5, 'height':3.5, 'fig_title': None, 'title_y': 1, 'fontsize': 8, 
                'legend_kwargs': {'fontsize': 6, 'loc': 'best', 'ncols': 2},
            'left': 0.15, 'bottom': 0.15, 'right': 0.9, 'top': 0.95, 'wspace': 0.2, 'hspace': 0.4}|save_fig_fig3a
     save_fig_fig3b = {'save_fig': True, 'fig_format': 'eps', 'file_path': simulation_path.as_posix()+'/', 'filename': 'NKE_BG_6_state_fig3b_fit'}
-    fig_cfg_fig3b = {'num_rows': 1, 'num_cols': 1, 'width':4, 'height':5, 'fig_title': None, 'title_y': 1, 'fontsize': 8, 
+    fig_cfg_fig3b = {'num_rows': 1, 'num_cols': 1, 'width':3.5, 'height':3.5, 'fig_title': None, 'title_y': 1, 'fontsize': 8, 
                'legend_kwargs': {'fontsize': 6, 'loc': 'best', 'ncols': 2},
            'left': 0.15, 'bottom': 0.15, 'right': 0.9, 'top': 0.95, 'wspace': 0.2, 'hspace': 0.4}|save_fig_fig3b
     save_fig_fig3c = {'save_fig': True, 'fig_format': 'eps', 'file_path': simulation_path.as_posix()+'/', 'filename': 'NKE_BG_6_state_fig3c_fit'}
-    fig_cfg_fig3c = {'num_rows': 1, 'num_cols': 1, 'width':4, 'height':5, 'fig_title': None, 'title_y': 1, 'fontsize': 8, 
+    fig_cfg_fig3c = {'num_rows': 1, 'num_cols': 1, 'width':3.5, 'height':3.5, 'fig_title': None, 'title_y': 1, 'fontsize': 8, 
                'legend_kwargs': {'fontsize': 6, 'loc': 'best', 'ncols': 2},
            'left': 0.15, 'bottom': 0.15, 'right': 0.9, 'top': 0.95, 'wspace': 0.2, 'hspace': 0.4}|save_fig_fig3c
 
@@ -296,60 +296,60 @@ if __name__ == '__main__':
                'c_ATP': 'report_task_NKE_BG_15_state_fixedV_fig3c'}
 
     data_dict_6state_v1_ss_steph_v0_fig2a={
-            'fig2a1_ss': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_withSS_fig2a1_ss_steph_v0',
-            'fig2a2_ss': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_withSS_fig2a2_ss_steph_v0',
-            'fig2a3_ss': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_withSS_fig2a3_ss_steph_v0',
-            'fig2a4_ss': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_withSS_fig2a4_ss_steph_v0',
+            'fig2a1_ss': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_SS_fig2a1_ss_steph_v0',
+            'fig2a2_ss': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_SS_fig2a2_ss_steph_v0',
+            'fig2a3_ss': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_SS_fig2a3_ss_steph_v0',
+            'fig2a4_ss': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_SS_fig2a4_ss_steph_v0',
             'fig2a1_bg': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_fig2a1_ss_steph_v0',
             'fig2a2_bg': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_fig2a2_ss_steph_v0',
             'fig2a3_bg': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_fig2a3_ss_steph_v0',
             'fig2a4_bg': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_fig2a4_ss_steph_v0',
             }
     data_dict_6state_v1_ss_steph_v0_fig2b={
-            'fig2b1_ss': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_withSS_fig2b1_ss_steph_v0',
-            'fig2b2_ss': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_withSS_fig2b2_ss_steph_v0',
-            'fig2b3_ss': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_withSS_fig2b3_ss_steph_v0',
+            'fig2b1_ss': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_SS_fig2b1_ss_steph_v0',
+            'fig2b2_ss': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_SS_fig2b2_ss_steph_v0',
+            'fig2b3_ss': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_SS_fig2b3_ss_steph_v0',
             'fig2b1_bg': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_fig2b1_ss_steph_v0',
             'fig2b2_bg': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_fig2b2_ss_steph_v0',
             'fig2b3_bg': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_fig2b3_ss_steph_v0',
             }
     
     data_dict_6state_v1_ss_steph_v0_fig3a={
-            'fig3a_ss': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_withSS_fig3a_ss_steph_v0',
+            'fig3a_ss': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_SS_fig3a_ss_steph_v0',
             'fig3a_bg': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_fig3a_ss_steph_v0',
             }   
     data_dict_6state_v1_ss_steph_v0_fig3b={
-            'fig3b_ss': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_withSS_fig3b_ss_steph_v0',
+            'fig3b_ss': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_SS_fig3b_ss_steph_v0',
             'fig3b_bg': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_fig3b_ss_steph_v0',
             }
     data_dict_6state_v1_ss_steph_v0_fig3c={
-            'fig3c_ss': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_withSS_fig3c_ss_steph_v0',
+            'fig3c_ss': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_SS_fig3c_ss_steph_v0',
             'fig3c_bg': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_fig3c_ss_steph_v0',
             }       
 
     # construct lines for 15-state and 6-state model
-    lines_dict_fig2a={1:{'xlabel': 'potential (mV)', 'ylabel':'Cycling velocity (s$^{-1}$)',
+    lines_dict_fig2a={1:{'xlabel': 'Membrane voltage (mV)', 'ylabel':'Cycling velocity (s$^{-1}$)',
                          'line':['fig2a1_data', 'fig2a2_data', 'fig2a3_data', 'fig2a4_data',
                                  'fig2a1_kinetic', 'fig2a2_kinetic', 'fig2a3_kinetic', 'fig2a4_kinetic',
                                  'fig2a1_ss', 'fig2a2_ss', 'fig2a3_ss', 'fig2a4_ss',
                                  'fig2a1_bg', 'fig2a2_bg', 'fig2a3_bg', 'fig2a4_bg']},}
     
-    lines_dict_fig2b={1:{'xlabel': 'potential (mV)', 'ylabel':'Current density (uA/uF)',
+    lines_dict_fig2b={1:{'xlabel': 'Membrane voltage (mV)', 'ylabel':'Current density (uA/uF)',
                          'line':['fig2b1_data', 'fig2b2_data', 'fig2b3_data',
                                  'fig2b1_kinetic', 'fig2b2_kinetic', 'fig2b3_kinetic',
                                  'fig2b1_ss', 'fig2b2_ss', 'fig2b3_ss',
                                  'fig2b1_bg', 'fig2b2_bg', 'fig2b3_bg']},}
-    lines_dict_fig3a={1:{'xlabel': '[Na]$_i$ (mM)', 'ylabel':'Relative cycling velocity',
+    lines_dict_fig3a={1:{'xlabel': '[Na$_i$] (mM)', 'ylabel':'Relative cycling velocity',
                          'line':['fig3a_data',
                                  'fig3a_kinetic',
                                  'fig3a_ss',
                                  'fig3a_bg']},}
-    lines_dict_fig3b={1:{'xlabel': '[K]$_o$ (mM)', 'ylabel':'Relative cycling velocity',
+    lines_dict_fig3b={1:{'xlabel': '[K$_o$] (mM)', 'ylabel':'Relative cycling velocity',
                          'line':['fig3b_data',
                                  'fig3b_kinetic',
                                  'fig3b_ss',
                                  'fig3b_bg']},}     
-    lines_dict_fig3c={1:{'xlabel': '[Na]$_i$ (mM)', 'ylabel':'Relative cycling velocity',
+    lines_dict_fig3c={1:{'xlabel': '[ATP] (mM)', 'ylabel':'Relative cycling velocity',
                          'line':['fig3c_data',
                                  'fig3c_kinetic',
                                  'fig3c_ss',                                 

@@ -18,22 +18,27 @@ save_fig = {'save_fig': True, 'fig_format': 'tif', 'file_path': simulation_path.
 fig_cfg = {'num_rows': 1, 'num_cols': 1, 'width':7.5, 'height':6, 'fig_title': None, 'title_y': 1, 'fontsize': 8, 
            'left': 0.1, 'bottom': 0.15, 'right': 0.9, 'top': 0.95, 'wspace': 0.2, 'hspace': 0.4}|save_fig
 
-filename_ss = Path(simulation_path /'report_task_Terkildsen_NaK_kinetic_modular_V_default_0.csv').as_posix()
-filename_bg15 = Path(simulation_path /'report_task_NKE_BG_15_state_ATP_0.csv').as_posix()
-filename_bg6_ZK = Path(simulation_path /'report_task_NKE_BG_15_state_ATP_1.csv').as_posix()
-filename_bg6 = Path(simulation_path /'report_task_NKE_BG_15_state_ATP_2.csv').as_posix()
+#filename_ss = Path(simulation_path /'report_task_Terkildsen_NaK_kinetic_modular_V_default_0.csv').as_posix()
+filename_bg15 = Path(simulation_path /'report_task_NKE_BG_15_state_default_T1200ms_0.csv').as_posix()
+filename_bg6_ZK = Path(simulation_path /'report_task_NKE_BG_6_state_ATPNaZK_free_default_T1200ms_0.csv').as_posix()
+#filename_bg6 = Path(simulation_path /'report_task_NKE_BG_15_state_ATP_2.csv').as_posix()
 
 line_cfg={}
-line_cfg['ss'] = { 'xdata': (filename_ss,'t'), 'ydata':(filename_ss,'i_Vm'),
-                'color': 'k', 'linestyle': '-',  'label': 'Terkildsen ss model'}
-line_cfg['bg15'] = { 'xdata': (filename_bg15,'t'), 'ydata':(filename_bg15,'i_Vm'),
-                'color': 'b', 'linestyle': '-.',  'label': 'Terkildsen 15-state model'}
-line_cfg['bg6_ZK'] = { 'xdata': (filename_bg6_ZK,'t'), 'ydata':(filename_bg6_ZK,'i_Vm'),
-                'color': 'c', 'linestyle': '-.',  'label': '6-ZK model'}
-line_cfg['bg6'] = { 'xdata': (filename_bg6,'t'), 'ydata':(filename_bg6,'i_Vm'),
-                'color': 'm', 'linestyle': '-.',  'label': '6 model'}
+line_cfg['bg6_ZK'] = { 'xdata': (filename_bg6_ZK,'t'), 'ydata':(filename_bg6_ZK,'v_r1'),
+                'color': 'g', 'linestyle': '--',  'label': 'SS'}
 
-lines_dict={1:{'xlabel': 't', 'line':['ss', 'bg15','bg6_ZK','bg6']}}
+line_cfg['bg6_ZK_u_Vm'] = { 'xdata': (filename_bg6_ZK,'t'), 'ydata':(filename_bg6_ZK,'u_Vm'),
+                'color': 'g', 'linestyle': '--',  'label': 'SS'}
+
+line_cfg['bg15'] = { 'xdata': (filename_bg15,'t'), 'ydata':(filename_bg15,'v_r1'),
+                'color': 'b', 'linestyle': '-.',  'label': '15-state BG'}
+
+line_cfg['bg15_u_Vm'] = { 'xdata': (filename_bg15,'t'), 'ydata':(filename_bg15,'u_Vm'),
+                'color': 'b', 'linestyle': '-.',  'label': '15-state BG'}
+
+
+lines_dict={1:{'xlabel': 't', 'line':[ 'bg15','bg6_ZK']},
+            }
 
 def plot_cfg_ss(lines_dict):
     plot_cfg = {}

@@ -1,7 +1,6 @@
 import sys
 import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from scripts.edit_sedmls_NKE_BG_6_state_ATPNa import edit_NKE_BG_6_state_ATPNa, edit_NKE_BG_6_state_ATPNa_fixedV
 from sim_edit_func import  assemble_output
 from edit_sedmls import edit_default, edit_Nai, edit_Ko, edit_ATP, edit_ADP, edit_Pi, edit_pH, edit_fig3a, edit_fig3b, edit_fig3c, edit_fig5
 from pathlib import Path
