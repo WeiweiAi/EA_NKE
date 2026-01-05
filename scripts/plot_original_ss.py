@@ -263,31 +263,31 @@ def new_lines_fig3c(dict_data,color='b'):
 def plot_cfg_ss(lines_dict):
     plot_cfg = {}
     for plot_id, line_group in lines_dict.items():
-        plot_cfg[plot_id] = {'ylabel': line_group['ylabel'], 'xlabel': line_group['xlabel'],'show_grid': 'both', 'grid_axis': 'both',  'title_y': -0.3,
+        plot_cfg[plot_id] = {'ylabel': line_group['ylabel'], 'xlabel': line_group['xlabel'], 'title_y': -0.3,
                 'line': line_group['line'], 'legend': line_group['line'],'lgdncol': 1}
     return plot_cfg
 
 if __name__ == '__main__':
     
     save_fig_fig2a = {'save_fig': True, 'fig_format': 'eps', 'file_path': simulation_path.as_posix()+'/', 'filename': 'NKE_BG_6_state_fig2a_fit'}
-    fig_cfg_fig2a = {'num_rows': 1, 'num_cols': 1, 'width':3.5, 'height':3.5, 'fig_title': None, 'title_y': 1, 'fontsize': 8, 
-               'legend_kwargs': {'fontsize': 6, 'loc': 'best', 'ncols': 2},
+    fig_cfg_fig2a = {'num_rows': 1, 'num_cols': 1, 'width':3.5, 'height':3.5, 'fig_title': None, 'title_y': 1, 'fontsize': 10, 
+               'legend_kwargs': {'fontsize': 8, 'loc': 'best', 'ncols': 2},
            'left': 0.15, 'bottom': 0.15, 'right': 0.9, 'top': 0.95, 'wspace': 0.2, 'hspace': 0.4}|save_fig_fig2a
     save_fig_fig2b = {'save_fig': True, 'fig_format': 'eps', 'file_path': simulation_path.as_posix()+'/', 'filename': 'NKE_BG_6_state_fig2b_fit'}
-    fig_cfg_fig2b = {'num_rows': 1, 'num_cols': 1, 'width':3.5, 'height':3.5, 'fig_title': None, 'title_y': 1, 'fontsize': 8, 
-               'legend_kwargs': {'fontsize': 6, 'loc': 'best', 'ncols': 2},
+    fig_cfg_fig2b = {'num_rows': 1, 'num_cols': 1, 'width':3.5, 'height':3.5, 'fig_title': None, 'title_y': 1, 'fontsize': 10, 
+               'legend_kwargs': {'fontsize': 8, 'loc': 'best', 'ncols': 2},
            'left': 0.15, 'bottom': 0.15, 'right': 0.9, 'top': 0.95, 'wspace': 0.2, 'hspace': 0.4}|save_fig_fig2b
     save_fig_fig3a = {'save_fig': True, 'fig_format': 'eps', 'file_path': simulation_path.as_posix()+'/', 'filename': 'NKE_BG_6_state_fig3a_fit'}
-    fig_cfg_fig3a = {'num_rows': 1, 'num_cols': 1, 'width':3.5, 'height':3.5, 'fig_title': None, 'title_y': 1, 'fontsize': 8, 
-               'legend_kwargs': {'fontsize': 6, 'loc': 'best', 'ncols': 2},
+    fig_cfg_fig3a = {'num_rows': 1, 'num_cols': 1, 'width':3.5, 'height':3.5, 'fig_title': None, 'title_y': 1, 'fontsize': 10, 
+               'legend_kwargs': {'fontsize': 8, 'loc': 'best', 'ncols': 2},
            'left': 0.15, 'bottom': 0.15, 'right': 0.9, 'top': 0.95, 'wspace': 0.2, 'hspace': 0.4}|save_fig_fig3a
     save_fig_fig3b = {'save_fig': True, 'fig_format': 'eps', 'file_path': simulation_path.as_posix()+'/', 'filename': 'NKE_BG_6_state_fig3b_fit'}
-    fig_cfg_fig3b = {'num_rows': 1, 'num_cols': 1, 'width':3.5, 'height':3.5, 'fig_title': None, 'title_y': 1, 'fontsize': 8, 
-               'legend_kwargs': {'fontsize': 6, 'loc': 'best', 'ncols': 2},
+    fig_cfg_fig3b = {'num_rows': 1, 'num_cols': 1, 'width':3.5, 'height':3.5, 'fig_title': None, 'title_y': 1, 'fontsize': 10, 
+               'legend_kwargs': {'fontsize': 8, 'loc': 'best', 'ncols': 2},
            'left': 0.15, 'bottom': 0.15, 'right': 0.9, 'top': 0.95, 'wspace': 0.2, 'hspace': 0.4}|save_fig_fig3b
     save_fig_fig3c = {'save_fig': True, 'fig_format': 'eps', 'file_path': simulation_path.as_posix()+'/', 'filename': 'NKE_BG_6_state_fig3c_fit'}
-    fig_cfg_fig3c = {'num_rows': 1, 'num_cols': 1, 'width':3.5, 'height':3.5, 'fig_title': None, 'title_y': 1, 'fontsize': 8, 
-               'legend_kwargs': {'fontsize': 6, 'loc': 'best', 'ncols': 2},
+    fig_cfg_fig3c = {'num_rows': 1, 'num_cols': 1, 'width':3.5, 'height':3.5, 'fig_title': None, 'title_y': 1, 'fontsize': 10, 
+               'legend_kwargs': {'fontsize': 8, 'loc': 'best', 'ncols': 2},
            'left': 0.15, 'bottom': 0.15, 'right': 0.9, 'top': 0.95, 'wspace': 0.2, 'hspace': 0.4}|save_fig_fig3c
 
     data_dict_15state={'u_Vm': 'report_task_NKE_BG_15_state_fixedV_fig5',
