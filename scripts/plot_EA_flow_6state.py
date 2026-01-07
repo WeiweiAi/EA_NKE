@@ -43,19 +43,19 @@ for key in z_var_vals:
 # fixed target positions for better visualization
 fig=plt.figure(figsize=(8,6))
 ax=fig.add_subplot(1, 1, 1, xticks=[], yticks=[],frame_on=False)
-sankey = Sankey(ax=ax, unit='%', scale=0.01, offset=0.2, gap=0.15, format='%.1f')
+sankey = Sankey(ax=ax, unit='%', scale=0.01, offset=0.28, gap=0.15, format='%.1f')
 
 flows = [z_var_vals['ATP Hydrolysis Energy'], -z_var_vals['Reactions Heat Production'],
          -z_var_vals['Na Energy'], -z_var_vals['K Energy'],
          -z_var_vals['Vm Energy']]
-labels = ['ATP hydrolysis', 'Heat production', 'Na storage', 'K storage', 'Membrane storage']
+labels = ['ATP hydrolysis', 'Heat production', r'$Na^+$ storage', r'$K^+$ storage', 'Membrane storage']
 orients = [0, 1, 0, 0, -1]
 
 sankey.add(
     flows=flows,
     labels=labels,
     orientations=orients,
-    trunklength=1.6,              # extend the central trunk
+    trunklength=1.5,              # extend the central trunk
     pathlengths=[0.4, 0.3, 0.4, 0.4, 0.3],
     alpha=0.6
 )
