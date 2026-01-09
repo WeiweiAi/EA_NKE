@@ -296,35 +296,35 @@ if __name__ == '__main__':
                'c_ATP': 'report_task_NKE_BG_15_state_fixedV_fig3c'}
 
     data_dict_6state_v1_ss_steph_v0_fig2a={
-            'fig2a1_ss': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_SS_fig2a1_ss_steph_v0',
-            'fig2a2_ss': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_SS_fig2a2_ss_steph_v0',
-            'fig2a3_ss': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_SS_fig2a3_ss_steph_v0',
-            'fig2a4_ss': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_SS_fig2a4_ss_steph_v0',
-            'fig2a1_bg': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_fig2a1_ss_steph_v0',
-            'fig2a2_bg': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_fig2a2_ss_steph_v0',
-            'fig2a3_bg': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_fig2a3_ss_steph_v0',
-            'fig2a4_bg': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_fig2a4_ss_steph_v0',
+            'fig2a1_ss': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_SS_fig2a1_ss',
+            'fig2a2_ss': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_SS_fig2a2_ss',
+            'fig2a3_ss': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_SS_fig2a3_ss',
+            'fig2a4_ss': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_SS_fig2a4_ss',
+            'fig2a1_bg': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_fig2a1_ss',
+            'fig2a2_bg': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_fig2a2_ss',
+            'fig2a3_bg': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_fig2a3_ss',
+            'fig2a4_bg': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_fig2a4_ss',
             }
     data_dict_6state_v1_ss_steph_v0_fig2b={
-            'fig2b1_ss': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_SS_fig2b1_ss_steph_v0',
-            'fig2b2_ss': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_SS_fig2b2_ss_steph_v0',
-            'fig2b3_ss': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_SS_fig2b3_ss_steph_v0',
-            'fig2b1_bg': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_fig2b1_ss_steph_v0',
-            'fig2b2_bg': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_fig2b2_ss_steph_v0',
-            'fig2b3_bg': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_fig2b3_ss_steph_v0',
+            'fig2b1_ss': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_SS_fig2b1_ss',
+            'fig2b2_ss': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_SS_fig2b2_ss',
+            'fig2b3_ss': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_SS_fig2b3_ss',
+            'fig2b1_bg': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_fig2b1_ss',
+            'fig2b2_bg': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_fig2b2_ss',
+            'fig2b3_bg': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_fig2b3_ss',
             }
     
     data_dict_6state_v1_ss_steph_v0_fig3a={
-            'fig3a_ss': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_SS_fig3a_ss_steph_v0',
-            'fig3a_bg': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_fig3a_ss_steph_v0',
+            'fig3a_ss': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_SS_fig3a_ss',
+            'fig3a_bg': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_fig3a_ss',
             }   
     data_dict_6state_v1_ss_steph_v0_fig3b={
-            'fig3b_ss': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_SS_fig3b_ss_steph_v0',
-            'fig3b_bg': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_fig3b_ss_steph_v0',
+            'fig3b_ss': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_SS_fig3b_ss',
+            'fig3b_bg': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_fig3b_ss',
             }
     data_dict_6state_v1_ss_steph_v0_fig3c={
-            'fig3c_ss': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_SS_fig3c_ss_steph_v0',
-            'fig3c_bg': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_fig3c_ss_steph_v0',
+            'fig3c_ss': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_SS_fig3c_ss',
+            'fig3c_bg': 'report_task_NKE_BG_6_state_ATPNaZK_free_fixedV_fig3c_ss',
             }       
 
     # construct lines for 15-state and 6-state model
