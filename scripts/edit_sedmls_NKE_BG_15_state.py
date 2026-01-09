@@ -26,7 +26,7 @@ def edit_15state():
         params={'T_0':{'component':'NKE_BG_Env','name':'T_0','newValue':str(T)},
         }
         startTime=T-0.2
-        endTime=6*T-0.2  
+        endTime=10*T-0.2  
         numSteps=int((endTime - startTime)*1000)
         ids='_T'+str(int(T*1000))+'ms'             
         NKE_BG_15_state_sedmls[f'default'+ids]=edit_default(model_name,outputs,model_id_base=f'default'+ids,params=params,startTime=startTime,endTime=endTime,numSteps=numSteps)
