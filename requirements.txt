@@ -7,7 +7,7 @@ cycler==0.12.1
 evalidate==2.0.2
 fonttools==4.51.0
 idna==3.7
-iniconfig==2.3.0
+iniconfig==2.1.0
 kaleido==1.2.0
 kiwisolver==1.4.5
 libcellml==0.6.3
@@ -27,14 +27,12 @@ plotly==6.5.0
 pluggy==1.6.0
 Pygments==2.19.2
 pyparsing==3.1.2
-pytest==9.0.1
-pytest-timeout==2.4.0
 python-dateutil==2.9.0.post0
 python-libsedml==2.0.32
 pytz==2024.1
 requests==2.31.0
 scikit-sundae==1.0.3
-scipy==1.16.1
+scipy==1.13.1
 simplejson==3.20.2
 six==1.16.0
 sympy==1.14.0
