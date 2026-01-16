@@ -296,35 +296,35 @@ if __name__ == '__main__':
                'c_ATP': 'report_task_NKE_BG_15_state_fixedV_fig3c'}
 
     data_dict_6state_v1_ss_steph_v0_fig2a={
-            'fig2a1_ss': 'report_task_NKE_BG_6_state_ATPNaZKV2_SS_fixedV_fig2a1_ss',
-            'fig2a2_ss': 'report_task_NKE_BG_6_state_ATPNaZKV2_SS_fixedV_fig2a2_ss',
-            'fig2a3_ss': 'report_task_NKE_BG_6_state_ATPNaZKV2_SS_fixedV_fig2a3_ss',
-            'fig2a4_ss': 'report_task_NKE_BG_6_state_ATPNaZKV2_SS_fixedV_fig2a4_ss',
-            'fig2a1_bg': 'report_task_NKE_BG_6_state_ATPNaZKV2_fixedV_fig2a1_ss',
-            'fig2a2_bg': 'report_task_NKE_BG_6_state_ATPNaZKV2_fixedV_fig2a2_ss',
-            'fig2a3_bg': 'report_task_NKE_BG_6_state_ATPNaZKV2_fixedV_fig2a3_ss',
-            'fig2a4_bg': 'report_task_NKE_BG_6_state_ATPNaZKV2_fixedV_fig2a4_ss',
+            'fig2a1_ss': 'report_task_NKE_BG_6_state_ATPNaZKV2_SS_fixedV_fig2a1',
+            'fig2a2_ss': 'report_task_NKE_BG_6_state_ATPNaZKV2_SS_fixedV_fig2a2',
+            'fig2a3_ss': 'report_task_NKE_BG_6_state_ATPNaZKV2_SS_fixedV_fig2a3',
+            'fig2a4_ss': 'report_task_NKE_BG_6_state_ATPNaZKV2_SS_fixedV_fig2a4',
+            'fig2a1_bg': 'report_task_NKE_BG_6_state_ATPNaZKV2_fixedV_fig2a1',
+            'fig2a2_bg': 'report_task_NKE_BG_6_state_ATPNaZKV2_fixedV_fig2a2',
+            'fig2a3_bg': 'report_task_NKE_BG_6_state_ATPNaZKV2_fixedV_fig2a3',
+            'fig2a4_bg': 'report_task_NKE_BG_6_state_ATPNaZKV2_fixedV_fig2a4',
             }
     data_dict_6state_v1_ss_steph_v0_fig2b={
-            'fig2b1_ss': 'report_task_NKE_BG_6_state_ATPNaZKV2_SS_fixedV_fig2b1_ss',
-            'fig2b2_ss': 'report_task_NKE_BG_6_state_ATPNaZKV2_SS_fixedV_fig2b2_ss',
-            'fig2b3_ss': 'report_task_NKE_BG_6_state_ATPNaZKV2_SS_fixedV_fig2b3_ss',
-            'fig2b1_bg': 'report_task_NKE_BG_6_state_ATPNaZKV2_fixedV_fig2b1_ss',
-            'fig2b2_bg': 'report_task_NKE_BG_6_state_ATPNaZKV2_fixedV_fig2b2_ss',
-            'fig2b3_bg': 'report_task_NKE_BG_6_state_ATPNaZKV2_fixedV_fig2b3_ss',
+            'fig2b1_ss': 'report_task_NKE_BG_6_state_ATPNaZKV2_SS_fixedV_fig2b1',
+            'fig2b2_ss': 'report_task_NKE_BG_6_state_ATPNaZKV2_SS_fixedV_fig2b2',
+            'fig2b3_ss': 'report_task_NKE_BG_6_state_ATPNaZKV2_SS_fixedV_fig2b3',
+            'fig2b1_bg': 'report_task_NKE_BG_6_state_ATPNaZKV2_fixedV_fig2b1',
+            'fig2b2_bg': 'report_task_NKE_BG_6_state_ATPNaZKV2_fixedV_fig2b2',
+            'fig2b3_bg': 'report_task_NKE_BG_6_state_ATPNaZKV2_fixedV_fig2b3',
             }
     
     data_dict_6state_v1_ss_steph_v0_fig3a={
-            'fig3a_ss': 'report_task_NKE_BG_6_state_ATPNaZKV2_SS_fixedV_fig3a_ss',
-            'fig3a_bg': 'report_task_NKE_BG_6_state_ATPNaZKV2_fixedV_fig3a_ss',
+            'fig3a_ss': 'report_task_NKE_BG_6_state_ATPNaZKV2_SS_fixedV_fig3a',
+            'fig3a_bg': 'report_task_NKE_BG_6_state_ATPNaZKV2_fixedV_fig3a',
             }   
     data_dict_6state_v1_ss_steph_v0_fig3b={
-            'fig3b_ss': 'report_task_NKE_BG_6_state_ATPNaZKV2_SS_fixedV_fig3b_ss',
-            'fig3b_bg': 'report_task_NKE_BG_6_state_ATPNaZKV2_fixedV_fig3b_ss',
+            'fig3b_ss': 'report_task_NKE_BG_6_state_ATPNaZKV2_SS_fixedV_fig3b',
+            'fig3b_bg': 'report_task_NKE_BG_6_state_ATPNaZKV2_fixedV_fig3b',
             }
     data_dict_6state_v1_ss_steph_v0_fig3c={
-            'fig3c_ss': 'report_task_NKE_BG_6_state_ATPNaZKV2_SS_fixedV_fig3c_ss',
-            'fig3c_bg': 'report_task_NKE_BG_6_state_ATPNaZKV2_fixedV_fig3c_ss',
+            'fig3c_ss': 'report_task_NKE_BG_6_state_ATPNaZKV2_SS_fixedV_fig3c',
+            'fig3c_bg': 'report_task_NKE_BG_6_state_ATPNaZKV2_fixedV_fig3c',
             }       
 
     # construct lines for 15-state and 6-state model
