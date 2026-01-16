@@ -17,7 +17,7 @@ simulation_path = Path(__file__).parent.parent / 'cad' / 'models' / 'simulation'
 path_ = Path(__file__).parent.parent / 'cad' /  'data'
 exp_id=['Nai','Ko','ATP','ADP','Pi','pH']
 exp_id=['ATP','ADP','Pi','pH']
-file_deltaG='deltaG_efficiency_report_task_NKE_BG_6_state_ATPNaZK_free'
+file_deltaG='deltaG_efficiency_report_task_NKE_BG_6_state_ATPNaZKV2'
 T_0=np.array([600,800,1000,1200])
 z_var_names=['Thermodynamic efficiency', 'Chemical conversion efficiency', 
              'Electrical conversion efficiency', 'Chemical-Electrical ratio',

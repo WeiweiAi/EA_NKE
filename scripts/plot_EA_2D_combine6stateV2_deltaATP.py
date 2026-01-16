@@ -26,7 +26,7 @@ z_var_names=['Thermodynamic efficiency', 'Chemical conversion efficiency',
 subtitles=[r'Thermodynamic efficiency $\eta$ (%)', r'Chemical conversion efficiency $\eta_c$ (%)', 
            r'Electrical conversion efficiency $\eta_e$ (%)', r'Chemical-Electrical ratio $\gamma$',
            'ATP Hydrolysis Power (pW)', 'Mean turnover rate (/s)']
-file_deltaG='deltaG_efficiency_report_task_NKE_BG_6_state_ATPNaZK_free'
+file_deltaG='deltaG_efficiency_report_task_NKE_BG_6_state_ATPNaZKV2'
 # Chemical conversion efficiency, Electrical conversion efficiency, Chemical-Electrical ratio
 basefile_1='EA_report_task_NKE_BG_6_state_ATPNaZKV2_SS_'
 basefile_2='EA_report_task_NKE_BG_6_state_ATPNaZKV2_'
