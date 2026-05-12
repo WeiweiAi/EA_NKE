@@ -76,10 +76,11 @@ for i,z_var_name in enumerate(z_var_names):
                 Y2 = -np.array(Y2)/1000
             ax[r,c].plot(X, Y1, marker='.', label=label+'_ss', color=color)
             ax[r,c].plot(X, Y2, marker='x', label=label+'_6state', color=color, linestyle='--')
-            ax2=ax[r,c].twinx()
-            ax2.plot(X, deltaG, marker='o', label='deltaG_ATP', color='b', linestyle=':')
-            ax2.tick_params(axis='y', colors='b')
-            ax2.set_ylabel(r'$\Delta G_{ATP}$ (kJ/mol)', color='b')
+            # comment out ax2 for deltaG
+            #ax2=ax[r,c].twinx()
+            #ax2.plot(X, deltaG, marker='o', label='deltaG_ATP', color='b', linestyle=':')
+            #ax2.tick_params(axis='y', colors='b')
+            #ax2.set_ylabel(r'$\Delta G_{ATP}$ (kJ/mol)', color='b')
             ax[r,c].grid(True, linestyle='--', alpha=0.5)
             Y1s.append(Y1)
             Y2s.append(Y2)
