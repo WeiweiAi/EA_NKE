@@ -22,7 +22,7 @@ component_name='NKE_BG_Env'
 R=8.314 #J mol-1 K-1
 T=310 #K, 37C
 
-deltaG_ATP=np.array([-46*1000,-48*1000,-50*1000,-52*1000,-54*1000,-56*1000,-57*1000,-57.25*1000,-57.5*1000,-58*1000,-58.25*1000,-59*1000,-60*1000,-62*1000]) #J/mol, literature values range from -45 to -60 kJ/mol
+deltaG_ATP=np.array([-46*1000,-46.5*1000,-47*1000,-47.5*1000,-48*1000,-50*1000,-52*1000,-54*1000,-56*1000,-57*1000,-57.25*1000,-57.5*1000,-58*1000,-58.25*1000,-59*1000,-60*1000,-60.5*1000,-61*1000,-61.5*1000,-62*1000]) #J/mol, literature values range from -45 to -60 kJ/mol
 deltaG_ATP_0=11.9*1000 #J/mol, standard Gibbs free energy change of ATP hydrolysis at pH 7.0, 37C
 ratio_ATP=np.exp((deltaG_ATP-deltaG_ATP_0)/(R*T))*1e6  # ratio of [ADP][Pi][H+]/[ATP] affects the Gibbs free energy of ATP hydrolysis
 def template_conditions():
