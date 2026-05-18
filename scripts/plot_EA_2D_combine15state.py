@@ -90,7 +90,12 @@ for i, z_var_name in enumerate(z_var_names):
                 ymin = min(np.min(Y1s), np.min(Y2s)) * 0.95
             else:
                 ymin = max(np.max(Y1s), np.max(Y2s)) * 0.6 # set to the half of the max values
-            ymax = max(np.max(Y1s), np.max(Y2s)) * 1.05
+            if 'Thermodynamic' in z_var_name:
+                ymax = 98
+                ymin = 50
+            elif 'Electrical' in z_var_name:
+                ymax =16
+                ymin =2
             ax[r,c].set_ylim(ymin, ymax)     
         
     # show legend only on the first subplot
