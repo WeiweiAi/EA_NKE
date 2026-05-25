@@ -90,6 +90,10 @@ for i, z_var_name in enumerate(z_var_names):
                 Y2 = -np.array(Y2)/1000
             ax_r, ax_c = divmod(i_exp, ncols) 
             # the first row, xdata is flow rate
+            if i_exp==0:
+                ax[0,ax_c].set_title(r'${Na}_i^+~\text{increase}\rightarrow$', fontsize=10)
+            else:
+                ax[0,ax_c].set_title(r'${K}_o^+~\text{increase}\rightarrow$', fontsize=10)
             ax[0,ax_c].plot(X1, Y1, marker='.', label=label+'_ss', color=color)
             ax[0,ax_c].plot(X2, Y2, marker='x', label=label+'_15state', color=color, linestyle='--')
             ax[0,ax_c].set_xlabel(f'{xlabel}', fontsize=10)
