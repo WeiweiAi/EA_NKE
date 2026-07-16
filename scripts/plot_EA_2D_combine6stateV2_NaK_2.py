@@ -39,7 +39,7 @@ for i, z_var_name in enumerate(z_var_names):
     fig.subplots_adjust(left=0.1, bottom=0.15, right=0.95, top=0.95, wspace=0.3, hspace=0.3)
     #add title
    # fig.suptitle(f'{subtitles[i]}', fontsize=16)
-    fig_name=f'EA_2D_combine_6stateV2_{z_var_name}_NaK'.replace(' ','_').replace('-','_') 
+    fig_name=f'EA_2D_combine_6stateV2_{z_var_name}_NaK_2'.replace(' ','_').replace('-','_') 
     for i_exp in range(len(exp_id)):
         filename_T600=Path(simulation_path /f'{basefile_1}{exp_id[i_exp]}_T600ms.csv').as_posix()
         filename_T1200=Path(simulation_path /f'{basefile_1}{exp_id[i_exp]}_T1200ms.csv').as_posix()
