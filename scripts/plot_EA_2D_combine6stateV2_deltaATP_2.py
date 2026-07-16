@@ -63,7 +63,7 @@ for i, z_var_name in enumerate(z_var_names):
             if 'Power' in z_var_name: # absolute values
                 Y1 = -np.array(Y1)/1000 # pW
                 Y2 = -np.array(Y2)/1000
-            ax[r,c].plot(deltaG, Y1, marker='.', label=label+'_ss', color=color)
+            ax[r,c].plot(deltaG, Y1, marker='.', label=label+'_SS', color=color)
             ax[r,c].plot(deltaG, Y2, marker='x', label=label+'_BG', color=color, linestyle='--')
             ax[r,c].set_xlabel(r'$\Delta G_{ATP}$ (kJ/mol)', fontsize=10)
             ax[r,c].grid(True, linestyle='--', alpha=0.5)

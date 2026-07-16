@@ -64,7 +64,7 @@ for i, z_var_name in enumerate(z_var_names):
             if 'Power' in z_var_name: # absolute values
                 Y1 = -np.array(Y1)/1000 # pW
                 Y2 = -np.array(Y2)/1000
-            ax[r,c].plot(X, Y1, marker='.', label=label+'_ss', color=color)
+            ax[r,c].plot(X, Y1, marker='.', label=label+'_SS', color=color)
             ax[r,c].plot(X, Y2, marker='x', label=label+'_BG', color=color, linestyle='--')
            # ax2=ax[r,c].twinx()
            # ax2.plot(X, deltaG, marker='o', label='deltaG_ATP', color='b', linestyle=':')

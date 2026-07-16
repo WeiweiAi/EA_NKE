@@ -94,15 +94,15 @@ for i, z_var_name in enumerate(z_var_names):
                 ax[0,ax_c].set_title(r'${Na}_i^+~\text{increase}\rightarrow$', fontsize=10)
             else:
                 ax[0,ax_c].set_title(r'${K}_o^+~\text{increase}\rightarrow$', fontsize=10)
-            ax[0,ax_c].plot(X1, Y1, marker='.', label=label+'_ss', color=color)
-            ax[0,ax_c].plot(X2, Y2, marker='x', label=label+'_15state', color=color, linestyle='--')
+            ax[0,ax_c].plot(X1, Y1, marker='.', label=label+'_SS', color=color)
+            ax[0,ax_c].plot(X2, Y2, marker='x', label=label+'_BG', color=color, linestyle='--')
             ax[0,ax_c].set_xlabel(f'{xlabel}', fontsize=10)
             ax[0,ax_c].set_ylabel(f'{subtitles[i]}', fontsize=10)
             ax[0,ax_c].grid(True, linestyle='--', alpha=0.5)
             # the second row, xdata is Nai or Ko
             X= x2
-            ax[1,ax_c].plot(X, X1, marker='.', label=label+'_ss', color=color)
-            ax[1,ax_c].plot(X, X2, marker='x', label=label+'_15state', color=color, linestyle='--')
+            ax[1,ax_c].plot(X, X1, marker='.', label=label+'_SS', color=color)
+            ax[1,ax_c].plot(X, X2, marker='x', label=label+'_BG', color=color, linestyle='--')
             ax[1,ax_c].set_xlabel(f' {subtitles2[i_exp]}', fontsize=10)
             ax[1,ax_c].set_ylabel(f'{xlabel}', fontsize=10)
             ax[1,ax_c].grid(True, linestyle='--', alpha=0.5)
